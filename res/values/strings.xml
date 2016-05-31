@@ -4,5 +4,10 @@
     <string name="app_name">WorldTrival</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="online_consult">在线咨询</string>
+    <string name="phone_consult">电话咨询</string>
+    <string name="overseas_consult">境外急联</string>
+    <string name="commonQuestion_consult">常见问题</string>
+    <string name="more_consult">更多\></string>
 
 </resources>
