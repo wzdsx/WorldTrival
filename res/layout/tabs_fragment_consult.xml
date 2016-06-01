@@ -131,4 +131,14 @@
         android:orientation="vertical"
         android:paddingTop="5.0dp" />
 
+    <ListView
+        android:id="@+id/listView_consult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:divider="@color/line"
+        android:dividerHeight="1px"
+        >
+
+</ListView>
+
 </LinearLayout>

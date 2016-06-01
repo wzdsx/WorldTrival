@@ -9,5 +9,10 @@
     <string name="overseas_consult">境外急联</string>
     <string name="commonQuestion_consult">常见问题</string>
     <string name="more_consult">更多\></string>
+    <string name="consult_Text0">何时收到出游凭证？</string>
+    <string name="consult_Text1">需要提前多少天预订？</string>
+    <string name="consult_Text2">出游凭证是什么？</string>
+    <string name="consult_Text3">我可以到当地现付吗？</string>
+    <string name="consult_Text4">如何获得红包?</string>
 
 </resources>
