@@ -15,5 +15,6 @@
     <string name="consult_Text3">我可以到当地现付吗？</string>
     <string name="consult_Text4">如何获得红包?</string>
     <string name="change_place">切换所在地</string>
+    <string name="home_page">首页</string>
 
 </resources>

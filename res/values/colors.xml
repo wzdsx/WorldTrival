@@ -8,4 +8,5 @@
     <color name="line">#ffeeeeee</color>
     <color name="green">#ff99cc00</color>
     <color name="green_complete">#ff34a350</color>
+    <color name="action_bar">#ff00be3a</color>
 </resources>
