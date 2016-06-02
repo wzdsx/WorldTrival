@@ -12,5 +12,5 @@ public class World_MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_world__main);
 	}
-
+//test2 to test1
 }
