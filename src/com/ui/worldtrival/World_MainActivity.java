@@ -6,12 +6,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class World_MainActivity extends Activity {
-	int a = 2;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_world__main);
 	}
-//test2 to test1  
+
 }
-// test1
