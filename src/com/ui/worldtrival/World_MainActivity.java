@@ -6,7 +6,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class World_MainActivity extends Activity {
-
+	int a = 2;
+	int b = 1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
