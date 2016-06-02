@@ -6,14 +6,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class Fragment_consult extends FragmentActivity {
-	//degb
+	
 	@Override
 	protected void onCreate(Bundle arg0) {
 		super.onCreate(arg0);
 		setContentView(R.layout.tabs_fragment_consult);
 		
 	}
-	//sde
+	
 
 
 	
