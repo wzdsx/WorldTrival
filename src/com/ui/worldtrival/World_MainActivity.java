@@ -7,10 +7,11 @@ import android.view.MenuItem;
 
 public class World_MainActivity extends Activity {
 	int a = 1;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_world__main);
 	}
-  
+
 }
