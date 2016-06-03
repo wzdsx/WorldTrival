@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 /**
- *·¢ÏÖFragment 
+ *å‘ç°Fragment 
  *
  */
 public class SearchFragment extends Fragment {

@@ -7,8 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.ViewGroup;
 /**
- *FragmentÊÊÅäÆ÷ 
- *
+ *Fragmenté€‚é…å™¨
  */
 public class GuideFragmentAdapter extends FragmentStatePagerAdapter {
 	private List<Fragment> listfragment;

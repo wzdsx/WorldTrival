@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 /**
- *Ö÷Ò³Fragment 
+ *é¦–é¡µ Fragment 
  *
  */
 public class HomeFragment extends Fragment {

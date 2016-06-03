@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 /**
- *µ±µØFragment 
+ *å½“åœ°Fragment 
  *
  */
 public class LocationFragment extends Fragment {

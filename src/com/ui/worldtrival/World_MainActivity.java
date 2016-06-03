@@ -19,50 +19,69 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
 /**
  * 
- * @author Joker
- * Ö÷Ò³Ãæ ÀïÃæ¼ÓÔØViewPager ºÍ µ×²¿µ¼º½
- * ViewPagerÖĞÓÃFragmentÊµÏÖ
- * function:1.ÍÏ¶¯ViewPager µ¼º½µÄÊÓÍ¼»á·¢Éú±ä»¯
- * 2*:ÏëÒªÊµÏÖ¸øµ¼º½Ìí¼Ó¼àÌıÆ÷ µã»÷µ¼º½¿ÉÒÔÊ¹ViewPager·¢Éú±ä»»
- *
+ * @author Joker 
+ * ä¸»Activity
+ * åŒ…å«åº•éƒ¨å¯¼èˆªå’ŒViewPager ViewPagerä¸­ç”¨Fragmentå®ç°
+ * function:1.ç‚¹å‡»åº•éƒ¨å¯¼èˆªviewPageræ”¹å˜
+ * 2.æ»‘åŠ¨ViewPageråº•éƒ¨å¯¼èˆªéšä¹‹æ”¹å˜
+ * 
  */
-public class World_MainActivity extends FragmentActivity implements OnPageChangeListener,OnClickListener{
-	private List<Fragment>listfragment;
+public class World_MainActivity extends FragmentActivity implements
+		OnPageChangeListener, OnClickListener {
+	private List<Fragment> listfragment;
 	private ViewPager viewpager;
 	private GuideFragmentAdapter fragAdapter;
-	private ImageView home_image,consult_image,location_image,search_image,mine_image;
-	private TextView home_text,consult_text,location_text,search_text,mine_text;
+	private ImageView home_image, consult_image, location_image, search_image,
+			mine_image;
+	private TextView home_text, consult_text, location_text, search_text,
+			mine_text;
+	private LinearLayout guide_home, guide_consult, guide_location,
+			guide_search, guide_mine;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_world__main);
-		//³õÊ¼»¯¿Ø¼ş
+		//åˆå§‹åŒ–æ§ä»¶
 		initView();
-		//³õÊ¼»¯¿Ø¼şÊôĞÔ
+		//åˆå§‹åŒ–å±æ€§	ä½¿é¦–é¡µæˆä¸ºé»˜è®¤å€¼
 		initViewPara();
-		//¹¹ÔìÊı¾İÔ´
+		//æ·»åŠ æ•°æ®æº List<Fragment>
 		addListResource();
-		//°ó¶¨ÊÊÅäÆ÷
+		//é€‚é…å™¨
 		initAdapter();
-		//¼àÌı
+		//æ·»åŠ ç›‘å¬
 		addListener();
 	}
+
 	private void initViewPara() {
 		home_image.setImageResource(R.drawable.home_normal);
 		home_text.setTextColor(Color.GREEN);
 	}
+
 	@SuppressWarnings("deprecation")
 	private void addListener() {
 		viewpager.setOnPageChangeListener(this);
+		guide_home.setOnClickListener(this);
+		guide_consult.setOnClickListener(this);
+		guide_location.setOnClickListener(this);
+		guide_search.setOnClickListener(this);
+		guide_mine.setOnClickListener(this);
 	}
+
 	private void initAdapter() {
-		fragAdapter = new GuideFragmentAdapter(getSupportFragmentManager(), listfragment);
+		fragAdapter = new GuideFragmentAdapter(getSupportFragmentManager(),
+				listfragment);
 		viewpager.setAdapter(fragAdapter);
 	}
+
 	private void addListResource() {
+		//åˆ›å»º5ä¸ªFragmentå°†ä»–ä»¬å­˜å‚¨åˆ°Listé›†åˆä¸­
 		listfragment = new ArrayList<Fragment>();
 		listfragment.add(new HomeFragment());
 		listfragment.add(new ConsultFragment());
@@ -70,8 +89,9 @@ public class World_MainActivity extends FragmentActivity implements OnPageChange
 		listfragment.add(new SearchFragment());
 		listfragment.add(new MineFragment());
 	}
+
 	private void initView() {
-		//³õÊ¼»¯ViewPager
+		// åˆå§‹åŒ–å¯¼èˆªæ§ä»¶
 		viewpager = (ViewPager) findViewById(R.id.main_viewpager);
 		home_image = (ImageView) findViewById(R.id.main_guide_home_image);
 		home_text = (TextView) findViewById(R.id.main_guide_home_text);
@@ -83,23 +103,29 @@ public class World_MainActivity extends FragmentActivity implements OnPageChange
 		search_text = (TextView) findViewById(R.id.main_guide_search_text);
 		mine_image = (ImageView) findViewById(R.id.main_guide_mine_image);
 		mine_text = (TextView) findViewById(R.id.main_guide_mine_text);
+		guide_home = (LinearLayout) findViewById(R.id.main_guide_home);
+		guide_consult = (LinearLayout) findViewById(R.id.main_guide_consult);
+		guide_location = (LinearLayout) findViewById(R.id.main_guide_location);
+		guide_search = (LinearLayout) findViewById(R.id.main_guide_search);
+		guide_mine = (LinearLayout) findViewById(R.id.main_guide_mine);
 	}
+
 	@Override
 	public void onPageScrollStateChanged(int arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
+
 	@Override
 	public void onPageScrolled(int arg0, float arg1, int arg2) {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	@Override
 	public void onPageSelected(int arg0) {
-//		Log.e("TAG", (arg0+1)+""); 
-		//µ¼º½ÑùÊ½Ëæ×ÅViewPager¸Ä±ä¶ø¸Ä±ä
-		switch(arg0){
+		//æ»‘åŠ¨ViewPager ä½¿ å¯¼èˆªæ”¹å˜
+		switch (arg0) {
 		case 0:
 			home_image.setImageResource(R.drawable.home_click);
 			home_text.setTextColor(Color.GREEN);
@@ -160,16 +186,35 @@ public class World_MainActivity extends FragmentActivity implements OnPageChange
 			mine_image.setImageResource(R.drawable.mine_click);
 			mine_text.setTextColor(Color.GREEN);
 			break;
-		default :
+		default:
 			break;
 		}
-		
+
 	}
+
 	@Override
 	public void onClick(View v) {
-	/**
-	 * µã»÷µ¼º½Viewpager¸Ä±ä	
-	 */
+		/**
+		* ç‚¹å‡»å¯¼èˆª ä½¿ viewPager æ”¹å˜
+		 */
+		switch(v.getId()){
+		case R.id.main_guide_home:
+			//è®¾ç½®å½“å‰é¡µå¡
+			viewpager.setCurrentItem(0);
+			break;
+		case R.id.main_guide_consult:
+			viewpager.setCurrentItem(1);
+			break;
+		case R.id.main_guide_location:
+			viewpager.setCurrentItem(2);
+			break;
+		case R.id.main_guide_search:
+			viewpager.setCurrentItem(3);
+			break;
+		case R.id.main_guide_mine:
+			viewpager.setCurrentItem(4);
+			break;
+		}
 	}
 
 }

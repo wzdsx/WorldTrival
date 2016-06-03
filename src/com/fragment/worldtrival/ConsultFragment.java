@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 /**
- *×ÉÑ¯Fragment 
+ *å’¨è¯¢ Fragment 
  *
  */
 public class ConsultFragment extends Fragment {
