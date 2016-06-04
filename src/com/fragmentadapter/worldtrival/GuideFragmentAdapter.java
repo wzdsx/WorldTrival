@@ -6,7 +6,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.ViewGroup;
+<<<<<<< HEAD
 
+=======
+/**
+ *Fragment适配器
+ */
+>>>>>>> 19341655d24ceecd1a457aaaad612da507ccb5a3
 public class GuideFragmentAdapter extends FragmentStatePagerAdapter {
 	private List<Fragment> listfragment;
 	public GuideFragmentAdapter(FragmentManager fm,List<Fragment> listfragment) {

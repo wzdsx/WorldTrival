@@ -1,3 +1,4 @@
+<<<<<<< HEAD:res/layout/tabs_fragment_home.xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -11,3 +12,62 @@
         android:text="TextView" />
 
 </LinearLayout>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 首页布局 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <!-- title 包含logo search 二维码 -->
+    <RelativeLayout 
+        android:id="@+id/title"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:background="#0f0"
+        >
+        <!-- logo -->
+        <ImageView 
+            android:id="@+id/home_logo"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="10dp"
+            />
+		<!-- 字 -->
+        <TextView
+            android:id="@+id/home_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/home_logo"
+            android:text="环球" />
+		<!-- search Button -->
+		<Button 
+		    android:id="@+id/home_search"
+		    android:layout_toRightOf="@id/home_text"
+		    android:textSize="12sp"
+		    android:layout_width="wrap_content"
+		    android:layout_height="25dp"
+		    android:layout_centerVertical="true"
+		    android:background="@drawable/shape_button"
+		    android:text="搜索目的地/游玩项目/度假酒店..."
+		    android:layout_marginLeft="10dp"
+		    />
+		<!-- 二维码 -->
+		<ImageView 
+		    android:id="@+id/home_two_code"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentRight="true"
+		    android:src="@drawable/logo"
+		    android:layout_centerVertical="true"
+		    android:layout_marginRight="10dp"
+		    />
+    </RelativeLayout>
+    
+</RelativeLayout>
+>>>>>>> 19341655d24ceecd1a457aaaad612da507ccb5a3:res/layout/guide_home.xml
