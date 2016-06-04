@@ -1,4 +1,5 @@
 package com.ui.worldtrival;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,57 +22,34 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-<<<<<<< HEAD
-public class World_MainActivity extends FragmentActivity implements OnPageChangeListener,OnClickListener{
-	private List<Fragment>listfragment;
-=======
 /**
  * 
- * @author Joker 
- * 主Activity
- * 包含底部导航和ViewPager ViewPager中用Fragment实现
- * function:1.点击底部导航viewPager改变
- * 2.滑动ViewPager底部导航随之改变
+ * @author Joker 主Activity 包含底部导航和ViewPager ViewPager中用Fragment实现
+ *         function:1.点击底部导航viewPager改变 2.滑动ViewPager底部导航随之改变
  * 
  */
-public class World_MainActivity extends FragmentActivity implements
-		OnPageChangeListener, OnClickListener {
+public class World_MainActivity extends FragmentActivity implements OnPageChangeListener, OnClickListener {
 	private List<Fragment> listfragment;
->>>>>>> 19341655d24ceecd1a457aaaad612da507ccb5a3
 	private ViewPager viewpager;
 	private GuideFragmentAdapter fragAdapter;
-	private ImageView home_image, consult_image, location_image, search_image,
-			mine_image;
-	private TextView home_text, consult_text, location_text, search_text,
-			mine_text;
-	private LinearLayout guide_home, guide_consult, guide_location,
-			guide_search, guide_mine;
+	private ImageView home_image, consult_image, location_image, search_image, mine_image;
+	private TextView home_text, consult_text, location_text, search_text, mine_text;
+	private LinearLayout guide_home, guide_consult, guide_location, guide_search, guide_mine;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_world__main);
-<<<<<<< HEAD
-		
-		initView();
-		
-		initViewPara();
-		
-		addListResource();
-		
-		initAdapter();
 
-=======
-		//初始化控件
+		// 初始化控件
 		initView();
-		//初始化属性	使首页成为默认值
+		// 初始化属性 使首页成为默认值
 		initViewPara();
-		//添加数据源 List<Fragment>
+		// 添加数据源 List<Fragment>
 		addListResource();
-		//适配器
+		// 适配器
 		initAdapter();
-		//添加监听
->>>>>>> 19341655d24ceecd1a457aaaad612da507ccb5a3
+		// 添加监听
 		addListener();
 	}
 
@@ -91,13 +69,12 @@ public class World_MainActivity extends FragmentActivity implements
 	}
 
 	private void initAdapter() {
-		fragAdapter = new GuideFragmentAdapter(getSupportFragmentManager(),
-				listfragment);
+		fragAdapter = new GuideFragmentAdapter(getSupportFragmentManager(), listfragment);
 		viewpager.setAdapter(fragAdapter);
 	}
 
 	private void addListResource() {
-		//创建5个Fragment将他们存储到List集合中
+		// 创建5个Fragment将他们存储到List集合中
 		listfragment = new ArrayList<Fragment>();
 		listfragment.add(new HomeFragment());
 		listfragment.add(new ConsultFragment());
@@ -107,11 +84,7 @@ public class World_MainActivity extends FragmentActivity implements
 	}
 
 	private void initView() {
-<<<<<<< HEAD
-		
-=======
 		// 初始化导航控件
->>>>>>> 19341655d24ceecd1a457aaaad612da507ccb5a3
 		viewpager = (ViewPager) findViewById(R.id.main_viewpager);
 		home_image = (ImageView) findViewById(R.id.main_guide_home_image);
 		home_text = (TextView) findViewById(R.id.main_guide_home_text);
@@ -144,13 +117,10 @@ public class World_MainActivity extends FragmentActivity implements
 
 	@Override
 	public void onPageSelected(int arg0) {
-<<<<<<< HEAD
 
-		switch(arg0){
-=======
-		//滑动ViewPager 使 导航改变
+		// 滑动ViewPager 使 导航改变
 		switch (arg0) {
->>>>>>> 19341655d24ceecd1a457aaaad612da507ccb5a3
+
 		case 0:
 			home_image.setImageResource(R.drawable.home_click);
 			home_text.setTextColor(Color.GREEN);
@@ -219,15 +189,13 @@ public class World_MainActivity extends FragmentActivity implements
 
 	@Override
 	public void onClick(View v) {
-<<<<<<< HEAD
 
-=======
 		/**
-		* 点击导航 使 viewPager 改变
+		 * 点击导航 使 viewPager 改变
 		 */
-		switch(v.getId()){
+		switch (v.getId()) {
 		case R.id.main_guide_home:
-			//设置当前页卡
+			// 设置当前页卡
 			viewpager.setCurrentItem(0);
 			break;
 		case R.id.main_guide_consult:
@@ -243,9 +211,7 @@ public class World_MainActivity extends FragmentActivity implements
 			viewpager.setCurrentItem(4);
 			break;
 		}
->>>>>>> 19341655d24ceecd1a457aaaad612da507ccb5a3
+
 	}
 
 }
-
-
