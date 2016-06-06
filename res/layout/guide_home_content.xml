@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/guide_home_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="玩转七洲" 
+        android:padding="3dp"/>
+
+    <LinearLayout
+        android:id="@+id/guide_home_guide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:padding="3dp"
+         >
+
+        <TextView
+            android:id="@+id/guide_home_guide_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#出海潜伏#"
+            android:textColor="#0f0" />
+
+        <TextView
+            android:id="@+id/guide_home_guide_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="碧海蓝天 清清沙白" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/guide_home_content1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:padding="3dp">
+
+        <ImageView
+            android:id="@+id/guide_home_content1_image1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/guide_home_content1_image2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/guide_home_content2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:padding="3dp">
+
+        <ImageView
+            android:id="@+id/guide_home_content2_image1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/guide_home_content2_image2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/guide_home_content2_image3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/guide_home_content3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="3dp" 
+        >
+
+        <ImageView
+            android:id="@+id/guide_home_content3_image1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/guide_home_content3_image2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/guide_home_content3_image3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher" />
+    </LinearLayout>
+
+</LinearLayout>

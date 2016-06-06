@@ -2,11 +2,11 @@
 <!-- 首页布局 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     >
     <!-- title 包含logo search 二维码 -->
     <RelativeLayout 
-        android:id="@+id/title"
+        android:id="@+id/home_title"
         android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,6 +53,12 @@
 		    android:layout_marginRight="10dp"
 		    />
     </RelativeLayout>
+    <ListView
+        android:layout_below="@id/home_title" 
+        android:id="@+id/guide_home_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        
+        ></ListView>
     
 </RelativeLayout>
-
