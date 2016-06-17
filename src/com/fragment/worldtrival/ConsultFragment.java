@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView.FindListener;
+import android.widget.TextView;
 
 public class ConsultFragment extends Fragment {
 	@Override
@@ -15,4 +17,5 @@ public class ConsultFragment extends Fragment {
 		View view = inflater.inflate(R.layout.tabs_fragment_consult, container, false);
 		return view;
 	}
+	
 }
