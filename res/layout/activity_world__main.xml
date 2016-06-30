@@ -1,138 +1,143 @@
-<RelativeLayout
- xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" 
-    >
-<!-- 主页面 ViewPager 和 导航 -->
-<!-- ViewPager -->
-	<android.support.v4.view.ViewPager
-	    android:id="@+id/main_viewpager"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    ></android.support.v4.view.ViewPager>
-<!-- 底部导航 -->
-	<LinearLayout 
-	    android:id="@+id/main_guide"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_alignParentBottom="true"
-	    android:orientation="horizontal">
-	    <!-- 首页 -->
-	    <LinearLayout 
-	        android:id="@+id/main_guide_home"
-	        android:layout_width="0dp"
-	        android:layout_height="wrap_content"
-	        android:layout_weight="1"
-	        android:orientation="vertical"
-	        android:gravity="center"
-	        >
-	        <ImageView 
-	            android:id="@+id/main_guide_home_image"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:src="@drawable/home_normal"
-	            android:scaleType="fitXY"
-	            />
-	        <TextView 
-	            android:id="@+id/main_guide_home_text"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:text="首页"
-	            />
-	    </LinearLayout>
-	    <!-- 咨询 -->
-	    <LinearLayout 
-	        android:id="@+id/main_guide_consult"
-	        android:layout_width="0dp"
-	        android:layout_height="wrap_content"
-	        android:layout_weight="1"
-	        android:orientation="vertical"
-	        android:gravity="center"
-	        >
-	        <ImageView 
-	            android:id="@+id/main_guide_consult_image"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:src="@drawable/consult_normal"
-	            android:scaleType="fitXY"
-	            />   
-	        <TextView 
-	            android:id="@+id/main_guide_consult_text"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:text="咨询"
-	            />
-	    </LinearLayout>
-	    <!-- 当地 -->
-	    <LinearLayout 
-	        android:id="@+id/main_guide_location"
-	        android:layout_width="0dp"
-	        android:layout_height="match_parent"
-	        android:layout_weight="1"
-	        android:orientation="vertical"
-	        android:gravity="center"
-	        >
-	        <ImageView 
-	            android:id="@+id/main_guide_location_image"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:src="@drawable/location_normal"
-	            android:scaleType="fitXY"
-	            />
-	        <TextView 
-	            android:id="@+id/main_guide_location_text"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:text="当地"
-	            />
-	    </LinearLayout>
-	    <!-- 发现 -->
-	    <LinearLayout 
-	        android:id="@+id/main_guide_search"
-	        android:layout_width="0dp"
-	        android:layout_height="match_parent"
-	        android:layout_weight="1"
-	        android:orientation="vertical"
-	        android:gravity="center"
-	        >
-	        <ImageView 
-	            android:id="@+id/main_guide_search_image"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:src="@drawable/search_normal"
-	            android:scaleType="fitXY"
-	            />
-	        <TextView 
-	            android:id="@+id/main_guide_search_text"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:text="发现"
-	            />
-	    </LinearLayout>
-	    <!-- 我的 -->
-	    <LinearLayout 
-	        android:id="@+id/main_guide_mine"
-	        android:layout_width="0dp"
-	        android:layout_weight="1"
-	        android:layout_height="match_parent"
-	        android:orientation="vertical"
-	        android:gravity="center"
-	        >
-	        <ImageView 
-	            android:id="@+id/main_guide_mine_image"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:src="@drawable/mine_normal"
-	            android:scaleType="fitXY"
-	            />
-	        <TextView 
-	            android:id="@+id/main_guide_mine_text"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:text="我的"
-	            />
-	        
-	    </LinearLayout>
-	</LinearLayout>
+    android:layout_height="match_parent" >
+    <!-- 主页面 ViewPager 和 导航 -->
+     <!-- ViewPager -->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/main_viewpager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/main_guide"
+         >
+    </android.support.v4.view.ViewPager>
+    <!-- 底部导航 -->
+
+    <LinearLayout
+		
+        android:id="@+id/main_guide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <!-- 首页 -->
+
+        <LinearLayout
+            android:id="@+id/main_guide_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/main_guide_home_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/home_click" />
+
+            <TextView
+                android:id="@+id/main_guide_home_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="首页" />
+        </LinearLayout>
+        <!-- 咨询 -->
+
+        <LinearLayout
+            android:id="@+id/main_guide_consult"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/main_guide_consult_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/consult_normal" />
+
+            <TextView
+                android:id="@+id/main_guide_consult_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="咨询" />
+        </LinearLayout>
+        <!-- 当地 -->
+
+        <LinearLayout
+            android:id="@+id/main_guide_location"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/main_guide_location_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/location_normal" />
+
+            <TextView
+                android:id="@+id/main_guide_location_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="当地" />
+        </LinearLayout>
+        <!-- 发现 -->
+
+        <LinearLayout
+            android:id="@+id/main_guide_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/main_guide_search_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/search_normal" />
+
+            <TextView
+                android:id="@+id/main_guide_search_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发现" />
+        </LinearLayout>
+        <!-- 我的 -->
+
+        <LinearLayout
+            android:id="@+id/main_guide_mine"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/main_guide_mine_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/mine_normal" />
+
+            <TextView
+                android:id="@+id/main_guide_mine_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的" />
+        </LinearLayout>
+    </LinearLayout>
+
+
 </RelativeLayout>

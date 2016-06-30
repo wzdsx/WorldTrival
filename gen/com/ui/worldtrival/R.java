@@ -8,6 +8,10 @@
 package com.ui.worldtrival;
 
 public final class R {
+    public static final class anim {
+        public static final int push_bottom_in=0x7f040000;
+        public static final int push_bottom_out=0x7f040001;
+    }
     public static final class attr {
     }
     public static final class dimen {
@@ -18,8 +22,8 @@ public final class R {
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f050000;
+        public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
         public static final int consult_click=0x7f020000;
@@ -29,52 +33,149 @@ public final class R {
         public static final int ic_launcher=0x7f020004;
         public static final int location_click=0x7f020005;
         public static final int location_normal=0x7f020006;
-        public static final int main_guide_home_image_normal=0x7f020007;
+        public static final int logo=0x7f020007;
         public static final int mine_click=0x7f020008;
         public static final int mine_normal=0x7f020009;
         public static final int search_click=0x7f02000a;
         public static final int search_normal=0x7f02000b;
+        public static final int selector_click=0x7f02000c;
+        public static final int shape_button=0x7f02000d;
+        public static final int start_page=0x7f02000e;
+        public static final int start_page2=0x7f02000f;
     }
     public static final class id {
-        public static final int action_settings=0x7f080016;
-        public static final int guide_consult=0x7f080011;
-        public static final int guide_location=0x7f080013;
-        public static final int guide_main=0x7f080012;
-        public static final int guide_mine=0x7f080014;
-        public static final int guide_search=0x7f080015;
-        public static final int main_guide=0x7f080001;
-        public static final int main_guide_consult=0x7f080005;
-        public static final int main_guide_consult_image=0x7f080006;
-        public static final int main_guide_consult_text=0x7f080007;
-        public static final int main_guide_home=0x7f080002;
-        public static final int main_guide_home_image=0x7f080003;
-        public static final int main_guide_home_text=0x7f080004;
-        public static final int main_guide_location=0x7f080008;
-        public static final int main_guide_location_image=0x7f080009;
-        public static final int main_guide_location_text=0x7f08000a;
-        public static final int main_guide_mine=0x7f08000e;
-        public static final int main_guide_mine_image=0x7f08000f;
-        public static final int main_guide_mine_text=0x7f080010;
-        public static final int main_guide_search=0x7f08000b;
-        public static final int main_guide_search_image=0x7f08000c;
-        public static final int main_guide_search_text=0x7f08000d;
-        public static final int main_viewpager=0x7f080000;
+        public static final int action_settings=0x7f090067;
+        public static final int guide_consult=0x7f090011;
+        public static final int guide_home_content1=0x7f09001c;
+        public static final int guide_home_content1_image1=0x7f09001d;
+        public static final int guide_home_content1_image2=0x7f09001f;
+        public static final int guide_home_content1_text1=0x7f09001e;
+        public static final int guide_home_content1_text2=0x7f090020;
+        public static final int guide_home_content2=0x7f090021;
+        public static final int guide_home_content2_image1=0x7f090022;
+        public static final int guide_home_content2_image2=0x7f090024;
+        public static final int guide_home_content2_image3=0x7f090026;
+        public static final int guide_home_content2_text1=0x7f090023;
+        public static final int guide_home_content2_text2=0x7f090025;
+        public static final int guide_home_content2_text3=0x7f090027;
+        public static final int guide_home_content3=0x7f090028;
+        public static final int guide_home_content3_image1=0x7f090029;
+        public static final int guide_home_content3_image2=0x7f09002b;
+        public static final int guide_home_content3_image3=0x7f09002d;
+        public static final int guide_home_content3_text1=0x7f09002a;
+        public static final int guide_home_content3_text2=0x7f09002c;
+        public static final int guide_home_content3_text3=0x7f09002e;
+        public static final int guide_home_guide=0x7f090019;
+        public static final int guide_home_guide_color=0x7f09001a;
+        public static final int guide_home_guide_normal=0x7f09001b;
+        public static final int guide_home_listview=0x7f090017;
+        public static final int guide_home_title=0x7f090018;
+        public static final int guide_home_viewpager=0x7f09002f;
+        public static final int guide_location=0x7f090057;
+        public static final int guide_mine=0x7f090058;
+        public static final int guide_search=0x7f090059;
+        public static final int home_logo=0x7f090013;
+        public static final int home_logo_search=0x7f09005b;
+        public static final int home_pager_one=0x7f090062;
+        public static final int home_pager_three=0x7f090063;
+        public static final int home_pager_two=0x7f090064;
+        public static final int home_search=0x7f090015;
+        public static final int home_search_item2_content=0x7f090061;
+        public static final int home_search_item2_title=0x7f090060;
+        public static final int home_search_left=0x7f09003c;
+        public static final int home_search_left_content1=0x7f09003e;
+        public static final int home_search_left_content2=0x7f09003f;
+        public static final int home_search_left_guide=0x7f09003d;
+        public static final int home_search_link=0x7f090041;
+        public static final int home_search_right=0x7f090040;
+        public static final int home_search_search=0x7f09005d;
+        public static final int home_text=0x7f090014;
+        public static final int home_text_search=0x7f09005c;
+        public static final int home_title=0x7f090012;
+        public static final int home_title_search=0x7f09005a;
+        public static final int home_two_code=0x7f090016;
+        public static final int home_two_code_search=0x7f09005e;
+        public static final int homesearch=0x7f09005f;
+        public static final int image_main=0x7f090065;
+        public static final int location_airport=0x7f090033;
+        public static final int location_airport_image=0x7f090034;
+        public static final int location_airport_text=0x7f090035;
+        public static final int location_friend=0x7f090039;
+        public static final int location_friend_image=0x7f09003a;
+        public static final int location_friend_text=0x7f09003b;
+        public static final int location_hotel=0x7f090036;
+        public static final int location_hotel_image=0x7f090037;
+        public static final int location_hotel_text=0x7f090038;
+        public static final int location_location=0x7f090030;
+        public static final int location_location_image=0x7f090031;
+        public static final int location_location_text=0x7f090032;
+        public static final int main_guide=0x7f090001;
+        public static final int main_guide_consult=0x7f090005;
+        public static final int main_guide_consult_image=0x7f090006;
+        public static final int main_guide_consult_text=0x7f090007;
+        public static final int main_guide_home=0x7f090002;
+        public static final int main_guide_home_image=0x7f090003;
+        public static final int main_guide_home_text=0x7f090004;
+        public static final int main_guide_location=0x7f090008;
+        public static final int main_guide_location_image=0x7f090009;
+        public static final int main_guide_location_text=0x7f09000a;
+        public static final int main_guide_mine=0x7f09000e;
+        public static final int main_guide_mine_image=0x7f09000f;
+        public static final int main_guide_mine_text=0x7f090010;
+        public static final int main_guide_search=0x7f09000b;
+        public static final int main_guide_search_image=0x7f09000c;
+        public static final int main_guide_search_text=0x7f09000d;
+        public static final int main_viewpager=0x7f090000;
+        public static final int webview=0x7f090066;
+        public static final int world_Africa=0x7f09004b;
+        public static final int world_Africa_image=0x7f09004c;
+        public static final int world_Africa_text=0x7f09004d;
+        public static final int world_Antrac=0x7f090054;
+        public static final int world_Antrac_image=0x7f090055;
+        public static final int world_Antrac_text=0x7f090056;
+        public static final int world_Asia=0x7f090042;
+        public static final int world_Asia_image=0x7f090043;
+        public static final int world_Asia_text=0x7f090044;
+        public static final int world_EastAmer=0x7f090051;
+        public static final int world_EastAmer_image=0x7f090052;
+        public static final int world_EastAmer_text=0x7f090053;
+        public static final int world_Europe=0x7f090045;
+        public static final int world_Europe_image=0x7f090046;
+        public static final int world_Europe_text=0x7f090047;
+        public static final int world_NorAmer=0x7f09004e;
+        public static final int world_NorAmer_image=0x7f09004f;
+        public static final int world_NorAmer_text=0x7f090050;
+        public static final int world_Oceania=0x7f090048;
+        public static final int world_Oceania_image=0x7f090049;
+        public static final int world_Oceania_text=0x7f09004a;
     }
     public static final class layout {
         public static final int activity_world__main=0x7f030000;
         public static final int guide_consult=0x7f030001;
         public static final int guide_home=0x7f030002;
-        public static final int guide_location=0x7f030003;
-        public static final int guide_mine=0x7f030004;
-        public static final int guide_search=0x7f030005;
+        public static final int guide_home_content=0x7f030003;
+        public static final int guide_home_guide=0x7f030004;
+        public static final int guide_home_location=0x7f030005;
+        public static final int guide_home_search=0x7f030006;
+        public static final int guide_home_zhou=0x7f030007;
+        public static final int guide_location=0x7f030008;
+        public static final int guide_mine=0x7f030009;
+        public static final int guide_search=0x7f03000a;
+        public static final int home_search_activitydialog=0x7f03000b;
+        public static final int home_search_item2=0x7f03000c;
+        public static final int home_viewpager_one=0x7f03000d;
+        public static final int home_viewpager_three=0x7f03000e;
+        public static final int home_viewpager_two=0x7f03000f;
+        public static final int main=0x7f030010;
+        public static final int webview=0x7f030011;
     }
     public static final class menu {
-        public static final int world__main=0x7f070000;
+        public static final int world__main=0x7f080000;
     }
     public static final class string {
-        public static final int action_settings=0x7f050002;
-        public static final int app_name=0x7f050000;
-        public static final int hello_world=0x7f050001;
+        public static final int action_settings=0x7f060002;
+        public static final int app_name=0x7f060000;
+        public static final int hello_world=0x7f060001;
     }
     public static final class style {
         /** 
@@ -98,10 +199,9 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
- All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int HomeActivityAnim=0x7f070001;
     }
 }

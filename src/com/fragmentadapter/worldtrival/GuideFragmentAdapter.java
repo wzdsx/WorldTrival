@@ -13,7 +13,7 @@ public class GuideFragmentAdapter extends FragmentStatePagerAdapter {
 	private List<Fragment> listfragment;
 	public GuideFragmentAdapter(FragmentManager fm,List<Fragment> listfragment) {
 		super(fm);
-		this.listfragment = listfragment;
+	 	this.listfragment = listfragment;
 		// TODO Auto-generated constructor stub
 	}
 

@@ -2,11 +2,11 @@
 <!-- 首页布局 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     >
     <!-- title 包含logo search 二维码 -->
     <RelativeLayout 
-        android:id="@+id/title"
+        android:id="@+id/home_title"
         android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,13 +34,13 @@
 		<Button 
 		    android:id="@+id/home_search"
 		    android:layout_toRightOf="@id/home_text"
+		   	android:layout_marginLeft="30dp"
 		    android:textSize="12sp"
 		    android:layout_width="wrap_content"
 		    android:layout_height="25dp"
 		    android:layout_centerVertical="true"
 		    android:background="@drawable/shape_button"
 		    android:text="搜索目的地/游玩项目/度假酒店..."
-		    android:layout_marginLeft="10dp"
 		    />
 		<!-- 二维码 -->
 		<ImageView 
@@ -52,6 +52,13 @@
 		    android:layout_centerVertical="true"
 		    android:layout_marginRight="10dp"
 		    />
-    </RelativeLayout>
+    </RelativeLayout> 
+    <ListView
+        android:layout_below="@id/home_title" 
+        android:id="@+id/guide_home_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:listSelector="@drawable/selector_click"
+        ></ListView>
     
 </RelativeLayout>
