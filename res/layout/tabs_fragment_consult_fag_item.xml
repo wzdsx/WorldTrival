@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/listView_item_consult"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/consult_text1"
+        android:layout_width="match_parent"
+        android:layout_height="32.0dp"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:paddingLeft="16.0dp"
+        android:singleLine="true"
+        android:textColor="@color/text_color_default"
+        android:textSize="15.0sp" 
+        android:text="@string/consult_Text0"/>
+
+    <include layout="@layout/tabs_fragment_listline" />
+
+    <TextView
+        android:id="@+id/consult_text2"
+        android:layout_width="match_parent"
+        android:layout_height="32.0dp"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:paddingLeft="16.0dp"
+        android:singleLine="true"
+        android:textColor="@color/text_color_default"
+        android:textSize="15.0sp" 
+        android:text="@string/consult_Text1"/>
+
+    <include layout="@layout/tabs_fragment_listline" />
+
+    <TextView
+        android:id="@+id/consult_text3"
+        android:layout_width="match_parent"
+        android:layout_height="32.0dp"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:paddingLeft="16.0dp"
+        android:singleLine="true"
+        android:textColor="@color/text_color_default"
+        android:textSize="15.0sp" 
+        android:text="@string/consult_Text2"/>
+
+    <include layout="@layout/tabs_fragment_listline" />
+
+    <TextView
+        android:id="@+id/consult_text4"
+        android:layout_width="match_parent"
+        android:layout_height="32.0dp"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:paddingLeft="16.0dp"
+        android:singleLine="true"
+        android:textColor="@color/text_color_default"
+        android:textSize="15.0sp" 
+        android:text="@string/consult_Text3"/>
+
+    <include layout="@layout/tabs_fragment_listline" />
+
+    <TextView
+        android:id="@+id/consult_text5"
+        android:layout_width="match_parent"
+        android:layout_height="32.0dp"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:paddingLeft="16.0dp"
+        android:singleLine="true"
+        android:textColor="@color/text_color_default"
+        android:textSize="15.0sp" 
+        android:text="@string/consult_Text4"/>
+
+</LinearLayout>

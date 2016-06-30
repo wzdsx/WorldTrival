@@ -1,13 +1,22 @@
 package com.worldtrival.bean;
 
 public class Recommend {
-	 private String goods_name,goods_id;
+	 private String goods_name,goods_id,url;
 
+	public Recommend(String goods_name, String goods_id , String url) {
+		super();
+		this.goods_name = goods_name;
+		this.goods_id = goods_id;
+		this.url = url;
+	}
+
+	
 	public Recommend(String goods_name, String goods_id) {
 		super();
 		this.goods_name = goods_name;
 		this.goods_id = goods_id;
 	}
+
 
 	public Recommend() {
 		super();
@@ -27,6 +36,15 @@ public class Recommend {
 
 	public void setGoods_id(String goods_id) {
 		this.goods_id = goods_id;
+	}
+
+	
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 	@Override

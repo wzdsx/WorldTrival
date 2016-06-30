@@ -26,6 +26,7 @@ import com.worldtrival.bean.Recommend;
 import com.worldtrival.bean.Status;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -57,8 +58,13 @@ public class HomeActivityDialog extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Intent intent = getIntent();
+		String json = intent.getStringExtra("json");
+		
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.home_search_activitydialog);
+		Log.e("trans", json);
+		addParse(json);
 		initView();
 		new Thread(new Runnable() {
 
@@ -73,6 +79,10 @@ public class HomeActivityDialog extends Activity {
 			}
 		}).start();
 		addListener();
+	}
+
+	private void addParse(String json) {
+		
 	}
 
 	private void addListener() {

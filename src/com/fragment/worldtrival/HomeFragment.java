@@ -1,5 +1,6 @@
 package com.fragment.worldtrival;
 
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,6 +31,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
@@ -44,16 +47,19 @@ import com.worldtrival.base.BaseHomeMessage;
 import com.worldtrival.base.Url;
 import com.worldtrival.bean.GoodList;
 import com.worldtrival.bean.ListViewData;
+import com.worldtrival.bean.Recommend;
 import com.worldtrival.init.HomeJson;
 import com.worldtrival.message.HomeMessageContent;
 import com.worldtrival.message.HomeMessageLocation;
 import com.worldtrival.message.HomeMessageSearch;
 import com.worldtrival.message.HomeMessageZhou;
 
+
 /**
  * 首页 Fragment
  * 
  */
+
 public class HomeFragment extends Fragment implements OnClickListener {
 	private ListView listview;
 	private ViewPager viewpager;
@@ -68,6 +74,7 @@ public class HomeFragment extends Fragment implements OnClickListener {
 	private Context context;
 	private String urlListView = "http://120.26.208.234:10320/?url=home/item";
 	Url urlBean = null;
+	IdListener idListener;
 	// private MyHandler handlerPict = new MyHandler();
 	// private Position position;
 	// 设置handler 的what time
@@ -76,15 +83,29 @@ public class HomeFragment extends Fragment implements OnClickListener {
 	// 设置viewpager当前页卡position
 	private int index = 0;
 
+	
+	
+	
+
+
+
+
+	public void setIdListener(IdListener idListener) {
+		this.idListener = idListener;
+	}
+
+
 	@Override
 	public void onAttach(Context context) {
 		super.onAttach(context);
 		this.context = context;
 	}
 
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+
 		new MyAsyncTask().execute(urlListView);
 		view = inflater.inflate(R.layout.guide_home, container, false);
 		initView();
@@ -97,11 +118,13 @@ public class HomeFragment extends Fragment implements OnClickListener {
 		listview.addHeaderView(item);
 		handler.sendEmptyMessageDelayed(AUTO, TIME);
 
+
 		return view;
 	}
 
+
 	private void addListener() {
-		title.setOnClickListener(this);
+//		title.setOnClickListener(this);
 	}
 
 	private void addListPager() {
@@ -147,7 +170,7 @@ public class HomeFragment extends Fragment implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		switch (v.getId()) {
+		/*switch (v.getId()) {
 		case R.id.home_title:
 			Intent intent = new Intent(context, HomeActivityDialog.class);
 			startActivity(intent);
@@ -158,27 +181,48 @@ public class HomeFragment extends Fragment implements OnClickListener {
 		default:
 			break;
 		}
-	}
+*/	}
 
 	class MyAsyncTask extends AsyncTask<String, Void, Object> {
-
+ 
 		@Override
 		protected void onPostExecute(Object result) {
 			// TODO Auto-generated method stub
 			super.onPostExecute(result);
-			List<ListViewData> listData = (List<ListViewData>) result;
+			Map<String, Object> m = (Map<String, Object>) result;
+			List<ListViewData> listData = (List<ListViewData>) m.get("list");
+			final String json = (String) m.get("json");
 //			 Log.e("title", listData.get(1).getText());
 			// Log.e("goods_list", listData.get(1).getList().get(1).getUrl());
 			addData(listData);
 			adapter = new HomeAdapter(getActivity(), list);
 			listview.setAdapter(adapter);
+			title.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					Intent intent = new Intent(context, HomeActivityDialog.class);
+					intent.putExtra("json", json);
+					startActivity(intent);
+					Activity activity = (Activity) context;
+					activity.overridePendingTransition(R.anim.push_bottom_in, 0);
+				}
+			});
+				/*Intent intent = new Intent(context, HomeActivityDialog.class);
+				startActivity(intent);
+				Activity activity = (Activity) context;
+				activity.overridePendingTransition(R.anim.push_bottom_in, 0);*/
+//			idListener.getListRecommend(listData);
 		}
 
 		@Override
 		protected Object doInBackground(String... params) {
 			String jsonContent = getJsonContent(params[0]);
 			List<ListViewData> data = getListViewData(jsonContent);
-			return data;
+			Map<String, Object> m = new HashMap<String, Object>();
+			m.put("json", jsonContent);
+			m.put("list", data);
+			return m;
 		}
 
 	}
@@ -257,29 +301,39 @@ public class HomeFragment extends Fragment implements OnClickListener {
 			JSONArray jArray = jo.getJSONArray("data");
 			// data数组元素中的数组goods_list
 			List<ListViewData> dataList = new ArrayList<ListViewData>();
+//			List<Recommend> listReco = new ArrayList<Recommend>();
+//			Recommend reco = null;
 			for (int i = 0; i < jArray.length(); i++) {
 				// 从data数组中得到每一个元素的对象
 				JSONObject data = jArray.getJSONObject(i);
 				// 从元素中得到goods_list数组
 				JSONArray goods_list = data.getJSONArray("goods_list");
 				ArrayList<GoodList> listGood = new ArrayList<GoodList>();
+				
 				for (int j = 0; j < goods_list.length(); j++) {
 					// 得到每个goods_list数组元素的对象
 					JSONObject obj = goods_list.getJSONObject(j);
 					goodlist = new GoodList();
+					/*reco = new Recommend();
+				    reco.setGoods_id(obj.getString("id"));
+				    reco.setUrl(obj.getString("url"));*/
 					// 将解析的内容分别赋值给GoodList
 					goodlist.setName(obj.getString("name"));
 					goodlist.setImg(obj.getString("goods_img"));
 					goodlist.setUrl(obj.getString("url"));
 					goodlist.setId(obj.getString("id"));
 					listGood.add(goodlist);
+//					Log.e("reco", reco.getUrl());
 				}
+				//传值到HomeActivityDialog
+				
 				listViewData = new ListViewData();
 				listViewData.setList(listGood);
 				listViewData.setText(data.getString("class_text"));
 				listViewData.setTitle(data.getString("class_title"));
 				dataList.add(listViewData);
 			}
+//			listReco.add(reco);
 			
 			return dataList;
 		} catch (Exception e) {
@@ -288,5 +342,7 @@ public class HomeFragment extends Fragment implements OnClickListener {
 		}
 		return null;
 	}
-
+	public interface IdListener{
+		void getListRecommend(List<ListViewData> list);
+	}
 }

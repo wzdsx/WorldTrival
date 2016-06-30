@@ -5,6 +5,7 @@ import com.worldtrival.base.BaseHomeMessage;
 public class HomeMessageSearch extends BaseHomeMessage {
 	private int image;
 	private String text1,text2,text3;
+
 	private boolean flag;
 	public HomeMessageSearch(int type, int image, String text1, String text2,
 			String text3,boolean flag) {
@@ -53,6 +54,7 @@ public class HomeMessageSearch extends BaseHomeMessage {
 	}
 	public void setFlag(boolean flag) {
 		this.flag = flag;
+
 	}
 	
 }
