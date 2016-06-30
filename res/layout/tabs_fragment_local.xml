@@ -276,7 +276,40 @@
                     android:text="签证"
                     android:textSize="12sp" />
             </LinearLayout>
+
         </LinearLayout>
+        <RelativeLayout 
+            android:id="@+id/map_rl"
+            android:layout_height="100dp"
+            android:layout_width="match_parent">
+
+            <ImageView
+                android:id="@+id/map_earth"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_earth_green" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#44888888"
+                android:text="点击进入地图"
+                android:textColor="#88565656" />
+            
+        </RelativeLayout>
+        
+
+        <TextView
+            android:id="@+id/tv_local_special"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:gravity="bottom"
+            android:textColor="#5d5e5b"
+            android:text="   当地特色" />
 
         <include layout="@layout/tabs_fragment_local_picture" />
 

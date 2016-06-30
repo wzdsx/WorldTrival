@@ -27,6 +27,8 @@
         <activity 
             android:name="com.ui.worldtrival.World_MainActivity"/>
         <activity 
+            android:name="com.ui.worldtrival.Local_Map_activaty"/>
+        <activity 
             android:name="com.ui.worldtrival.WebActivity"/>
         <activity 
             android:name="com.ui.worldtrival.HomeActivityDialog"
