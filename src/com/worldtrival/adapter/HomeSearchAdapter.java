@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,26 +21,29 @@ import com.worldtrival.bean.GoodList;
 import com.worldtrival.bean.ListViewData;
 import com.worldtrival.bean.Recommend;
 
-public class HomeSearchAdapter extends BaseAdapter implements IdListener{
+public class HomeSearchAdapter extends BaseAdapter {
 	private List<Recommend> list;
 	private Context context;
 	private LayoutInflater inflater;
 	private boolean isFirst ;
-	private List<ListViewData> listHomeHot;
-	
+	private List<Recommend> listRecommend;
 	
 
 	public HomeSearchAdapter(List<Recommend> list, Context context) {
 		super();
 		this.list = list;
 		this.context = context;
+		this.listRecommend = listRecommend;
 		inflater = LayoutInflater.from(context);
 		isFirst = true;
 	}
 
 	@Override
 	public int getCount() {
-		// TODO Auto-generated method stub
+//		Log.e("jjj", listRecommend.get(0).getGoods_id()+listRecommend.get(0).getUrl());
+		/*for(int i = 0 ; i < listRecommend.size() ; i++){
+			Log.e(i+"", listRecommend.get(i).getGoods_id()+listRecommend.get(i).getUrl());
+		}*/
 		return list.size();
 	}
 
@@ -74,58 +78,21 @@ public class HomeSearchAdapter extends BaseAdapter implements IdListener{
 		}else{
 			holder.item_title.setVisibility(View.GONE);
 		}
-		/*int li = listHomeHot.size();
-		for(int i = 0 ; i < li ; i ++){
-			ArrayList<GoodList> data = listHomeHot.get(i).getList();
-			for(int j = 0 ; j < data.size() ; i ++){
-				if(data.get(j).getId()==recommend.getGoods_id()){
-					holder.item_text.setOnClickListener(new MyOnclickListener(data.get(j).getUrl()));
-				}
-			}
-		}*/
-		
-		/*if(listHomeHot.get(position).getGoods_id()==recommend.getGoods_id()){
-			
-		}*/
 		holder.item_text.setText(recommend.getGoods_name());
+		holder.item_text.setOnClickListener(new MyOnClickListener("http://www.7zhou.com/tour-"+recommend.getGoods_id()+".html"));
+//		holder.item_text.setOnClickListener(new MyOnclickListener(""));
 		return v;
 	}
 	class ViewHolder{
 		TextView item_title,item_text;
 	}
 	
-	class MyOnclickListener implements OnClickListener{
+	
+	
+	class MyOnClickListener implements OnClickListener{
 		String url;
 		
-		public MyOnclickListener(String url) {
-			super();
-			this.url = url;
-		}
-
-		@Override
-		public void onClick(View v) {
-			switch (v.getId()) {
-			case R.id.home_search_item2_content:
-				Intent intent = new Intent(context,WebActivity.class);
-				intent.putExtra("url", url);
-				context.startActivity(intent);
-				break;
-
-			default:
-				break;
-			}
-		}
-		
-	}
-
-	@Override
-	public void getListRecommend(List<ListViewData> list) {
-		listHomeHot = list;
-	}
-	class MyIdClickListener implements OnClickListener{
-		String url;
-		
-		public MyIdClickListener(String url) {
+		public MyOnClickListener(String url) {
 			super();
 			this.url = url;
 		}
