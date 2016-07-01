@@ -9,13 +9,15 @@ public class Recommend {
 		this.goods_id = goods_id;
 		this.url = url;
 	}
-
 	
-	public Recommend(String goods_name, String goods_id) {
+	
+	public Recommend(String goods_id, String url) {
 		super();
-		this.goods_name = goods_name;
 		this.goods_id = goods_id;
+		this.url = url;
 	}
+
+
 
 
 	public Recommend() {
