@@ -11,10 +11,13 @@
             backward-compatibility can go here.
         -->
     </style>
-
+	
     <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+  	<style name="HomeActivityAnim" parent="android:style/Theme">
+  	</style>
+  	<style name="MyDialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
     </style>
-
 </resources>
