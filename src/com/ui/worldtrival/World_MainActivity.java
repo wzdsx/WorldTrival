@@ -12,6 +12,7 @@ import com.fragmentadapter.worldtrival.GuideFragmentAdapter;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.print.PrintAttributes.Resolution;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
