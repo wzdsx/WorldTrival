@@ -13,10 +13,8 @@ import com.fragmentadapter.worldtrival.GuideFragmentAdapter;
 import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
-
 import android.os.Handler;
 import android.os.Message;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
@@ -25,11 +23,8 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
