@@ -8,17 +8,16 @@
         android:id="@+id/guide_home_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="玩转七洲" 
-        android:padding="3dp"/>
+        android:padding="3dp"
+        android:text="玩转七洲" />
 
     <LinearLayout
         android:id="@+id/guide_home_guide"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginTop="5dp"
-        android:padding="3dp"
-         >
+        android:orientation="horizontal"
+        android:padding="3dp" >
 
         <TextView
             android:id="@+id/guide_home_guide_color"
@@ -38,56 +37,146 @@
         android:id="@+id/guide_home_content1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" 
-        android:padding="3dp">
+        android:orientation="horizontal"
+        android:padding="3dp" >
 
-        <ImageView
-            android:id="@+id/guide_home_content1_image1"
+        <RelativeLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_weight="1"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_launcher" />
+            android:padding="3dp" >
 
-        <ImageView
-            android:id="@+id/guide_home_content1_image2"
+            <ImageView
+                android:id="@+id/guide_home_content1_image1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_launcher" />
+
+            <TextView
+                android:id="@+id/guide_home_content1_text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/black"
+                android:gravity="center_horizontal"
+                android:singleLine="true"
+                android:text="nihao"
+                android:textColor="@android:color/white" />
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_weight="1"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_launcher" />
+            android:padding="3dp" >
+
+            <ImageView
+                android:id="@+id/guide_home_content1_image2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_launcher" />
+
+            <TextView
+                android:id="@+id/guide_home_content1_text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/black"
+                android:gravity="center_horizontal"
+                android:singleLine="true"
+                android:text="nihao"
+                android:textColor="@android:color/white" />
+        </RelativeLayout>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/guide_home_content2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" 
-        android:padding="3dp">
+        android:orientation="horizontal"
+        android:padding="3dp" >
 
-        <ImageView
-            android:id="@+id/guide_home_content2_image1"
+        <RelativeLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_weight="1"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_launcher" />
+            android:padding="3dp" >
 
-        <ImageView
-            android:id="@+id/guide_home_content2_image2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_launcher" />
+            <ImageView
+                android:id="@+id/guide_home_content2_image1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_launcher" />
 
-        <ImageView
-            android:id="@+id/guide_home_content2_image3"
+            <TextView
+                android:id="@+id/guide_home_content2_text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/black"
+                android:gravity="center_horizontal"
+                android:singleLine="true"
+                android:text="nihao"
+                android:textColor="@android:color/white" />
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_weight="1"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_launcher" />
+            android:padding="3dp" >
+
+            <ImageView
+                android:id="@+id/guide_home_content2_image2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_launcher" />
+
+            <TextView
+                android:id="@+id/guide_home_content2_text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/black"
+                android:gravity="center_horizontal"
+                android:singleLine="true"
+                android:text="nihao"
+                android:textColor="@android:color/white" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:padding="3dp" >
+
+            <ImageView
+                android:id="@+id/guide_home_content2_image3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_launcher" />
+
+            <TextView
+                android:id="@+id/guide_home_content2_text3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/black"
+                android:gravity="center_horizontal"
+                android:singleLine="true"
+                android:text="nihao"
+                android:textColor="@android:color/white" />
+        </RelativeLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -95,32 +184,85 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="3dp" 
-        >
+        android:padding="3dp" >
 
-        <ImageView
-            android:id="@+id/guide_home_content3_image1"
+        <RelativeLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_weight="1"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_launcher" />
+            android:padding="3dp" >
 
-        <ImageView
-            android:id="@+id/guide_home_content3_image2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_launcher" />
+            <ImageView
+                android:id="@+id/guide_home_content3_image1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_launcher" />
 
-        <ImageView
-            android:id="@+id/guide_home_content3_image3"
+            <TextView
+                android:id="@+id/guide_home_content3_text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/black"
+                android:gravity="center_horizontal"
+                android:singleLine="true"
+                android:text="nihao"
+                android:textColor="@android:color/white" />
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_weight="1"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_launcher" />
+            android:padding="3dp" >
+
+            <ImageView
+                android:id="@+id/guide_home_content3_image2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_launcher" />
+
+            <TextView
+                android:id="@+id/guide_home_content3_text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/black"
+                android:gravity="center_horizontal"
+                android:singleLine="true"
+                android:text="nihao"
+                android:textColor="@android:color/white" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:padding="3dp" >
+
+            <ImageView
+                android:id="@+id/guide_home_content3_image3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_launcher" />
+
+            <TextView
+                android:id="@+id/guide_home_content3_text3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/black"
+                android:gravity="center_horizontal"
+                android:singleLine="true"
+                android:text="nihao"
+                android:textColor="@android:color/white" />
+        </RelativeLayout>
     </LinearLayout>
 
 </LinearLayout>

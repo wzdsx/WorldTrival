@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *.class
 
 *.apk
@@ -7,3 +8,7 @@ bin/
 gen/
 
 .settings/
+=======
+/gen
+/bin
+>>>>>>> origin/master
