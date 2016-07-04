@@ -1,6 +1,20 @@
 package com.worldtrival.adapter;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import android.content.Context;
+import android.content.Intent;
+import android.support.v4.view.ViewPager;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.lidroid.xutils.BitmapUtils;
 import com.ui.worldtrival.HomeSearchActivity;
@@ -8,21 +22,12 @@ import com.ui.worldtrival.R;
 import com.ui.worldtrival.WebActivity;
 import com.worldtrival.base.BaseHomeMessage;
 import com.worldtrival.base.Url;
+import com.worldtrival.bean.GoodList;
+import com.worldtrival.bean.ListViewData;
 import com.worldtrival.message.HomeMessageContent;
 import com.worldtrival.message.HomeMessageLocation;
 import com.worldtrival.message.HomeMessageSearch;
 import com.worldtrival.message.HomeMessageZhou;
-
-import android.content.Context;
-import android.content.Intent;
-import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 public class HomeAdapter extends BaseAdapter {
 	private Context context;

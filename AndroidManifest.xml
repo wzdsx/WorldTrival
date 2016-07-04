@@ -64,7 +64,10 @@
             android:name="com.ui.worldtrival.HomeActivityDialog"
             android:theme="@style/HomeActivityAnim"
             />
-        <!-- ###################注册SDK使用的Activity###################### -->
+        <activity 
+            android:name="com.ui.worldtrival.HomeSearchActivity"
+            />
+       <!-- ###################注册SDK使用的Activity###################### -->
         <!-- 分享编辑页 -->
         <activity
             android:name="com.umeng.socialize.view.ShareActivity"
