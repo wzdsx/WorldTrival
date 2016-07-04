@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/fragment_contient_listview_item"
+     >
+    
+	<ImageView 
+	    android:id="@+id/contient_listview_item_image"
+	    android:layout_width="100dp"
+	    android:layout_height="100dp"
+	    android:scaleType="fitXY"
+	    android:src="@drawable/ic_launcher"
+	    />
+	<RelativeLayout 
+	    android:id="@+id/contient_listview_item_right"
+	    android:layout_width="wrap_content"
+	    android:layout_height="match_parent"
+	    
+	    >
+	    <TextView 
+	        android:id="@+id/contient_listview_item_name"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="西蒙人妖秀门票"
+	        android:layout_alignParentTop="true"
+	        />
+	    <TextView 
+	        android:id="@+id/contient_listview_item_normalPrice"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="￥90.00"
+	        android:layout_alignParentBottom="true"
+	        />
+	    <LinearLayout 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_above="@id/contient_listview_item_normalPrice"
+			android:orientation="horizontal"
+	        >
+	        <TextView 
+	            android:id="@+id/contient_listview_item_price"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="￥69.00"
+	            android:textColor="@android:color/holo_red_light"
+	            />
+	        <TextView 
+	            android:id="@+id/contient_listview_item_introduce"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="下单立减￥5.0"
+	            />
+	        
+	    </LinearLayout>
+	    
+	</RelativeLayout>
+</LinearLayout>

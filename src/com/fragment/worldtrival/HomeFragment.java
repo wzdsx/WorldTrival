@@ -29,7 +29,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
@@ -40,13 +39,13 @@ import com.fragmentadapter.worldtrival.HomeFragmentAdapter;
 import com.lidroid.xutils.BitmapUtils;
 import com.ui.worldtrival.HomeActivityDialog;
 import com.ui.worldtrival.R;
+import com.ui.worldtrival.WebActivity;
 import com.worldtrival.adapter.HomeAdapter;
 import com.worldtrival.base.BaseHomeMessage;
 import com.worldtrival.base.Url;
 import com.worldtrival.bean.GoodList;
 import com.worldtrival.bean.ListViewData;
 import com.worldtrival.init.HomeJson;
-
 import com.worldtrival.message.HomeMessageContent;
 import com.worldtrival.message.HomeMessageLocation;
 import com.worldtrival.message.HomeMessageSearch;
@@ -56,7 +55,6 @@ import com.worldtrival.message.HomeMessageZhou;
  * 首页 Fragment
  * 
  */
-
 public class HomeFragment extends Fragment implements OnClickListener {
 	private ListView listview;
 	private ViewPager viewpager;
@@ -86,9 +84,10 @@ public class HomeFragment extends Fragment implements OnClickListener {
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
 		new MyAsyncTask().execute(urlListView);
-		view = inflater.inflate(R.layout.tabs_fragment_home, container, false);
+		view = inflater.inflate(R.layout.guide_home, container, false);
 		initView();
 		initItem();
 		addListPager();
@@ -98,12 +97,15 @@ public class HomeFragment extends Fragment implements OnClickListener {
 		viewpager.setAdapter(viewAdapter);
 		listview.addHeaderView(item);
 		handler.sendEmptyMessageDelayed(AUTO, TIME);
-
+		
 		return view;
 	}
 
 	private void addListener() {
 		title.setOnClickListener(this);
+		view1.setOnClickListener(this);
+		view2.setOnClickListener(this);
+		view3.setOnClickListener(this);
 	}
 
 	private void addListPager() {
@@ -146,8 +148,10 @@ public class HomeFragment extends Fragment implements OnClickListener {
 
 	};
 
+
 	@Override
 	public void onClick(View v) {
+		Intent intent1 = new Intent(context, WebActivity.class);
 		switch (v.getId()) {
 		case R.id.home_title:
 			Intent intent = new Intent(context, HomeActivityDialog.class);
@@ -155,7 +159,16 @@ public class HomeFragment extends Fragment implements OnClickListener {
 			Activity activity = (Activity) context;
 			activity.overridePendingTransition(R.anim.push_bottom_in, 0);
 			break;
-
+		case R.id.home_viewpager_one:
+			
+			intent1.putExtra("url", "http://m.7zhou.com/article.php?id=254");
+			startActivity(intent1);
+		case R.id.home_viewpager_two:
+			intent1.putExtra("url", "http://m.7zhou.com/article.php?id=253");
+			startActivity(intent1);
+		case R.id.home_viewpager_three:
+			intent1.putExtra("url", "http://m.7zhou.com/article.php?id=252");
+			startActivity(intent1);
 		default:
 			break;
 		}
@@ -168,7 +181,7 @@ public class HomeFragment extends Fragment implements OnClickListener {
 			// TODO Auto-generated method stub
 			super.onPostExecute(result);
 			List<ListViewData> listData = (List<ListViewData>) result;
-			// Log.e("title", listData.get(1).getText());
+//			 Log.e("title", listData.get(1).getText());
 			// Log.e("goods_list", listData.get(1).getList().get(1).getUrl());
 			addData(listData);
 			adapter = new HomeAdapter(getActivity(), list);
@@ -190,7 +203,8 @@ public class HomeFragment extends Fragment implements OnClickListener {
 			HttpURLConnection conn = (HttpURLConnection) u.openConnection();
 			conn.setRequestMethod("POST");
 			// conn.setDoOutput(true);
-			BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+					conn.getInputStream()));
 			StringBuilder builder = new StringBuilder();
 			String line = null;
 			while ((line = br.readLine()) != null) {
@@ -209,24 +223,32 @@ public class HomeFragment extends Fragment implements OnClickListener {
 	public void addData(List<ListViewData> listData) {
 		list = new ArrayList<BaseHomeMessage>();
 
-		list.add(new HomeMessageZhou(0, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher,
-				R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, "亚洲",
-				"欧洲", "大洋洲", "非洲", "北美洲", "南美洲", "南极洲"));
-		list.add(new HomeMessageLocation(1, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher,
+		list.add(new HomeMessageZhou(0, R.drawable.ic_launcher,
+				R.drawable.ic_launcher, R.drawable.ic_launcher,
+				R.drawable.ic_launcher, R.drawable.ic_launcher,
+				R.drawable.ic_launcher, R.drawable.ic_launcher, "亚洲", "欧洲",
+				"大洋洲", "非洲", "北美洲", "南美洲", "南极洲"));
+		list.add(new HomeMessageLocation(1, R.drawable.ic_launcher,
+				R.drawable.ic_launcher, R.drawable.ic_launcher,
 				R.drawable.ic_launcher, "当地玩乐", "机场接送", "酒店度假村", "结伴同游"));
-		list.add(new HomeMessageSearch(2, R.drawable.ic_launcher, "发现更多", "七洲有礼 在线互动 同城聚会", "惊喜活动天天有", false));
-		list.add(new HomeMessageSearch(2, R.drawable.ic_launcher, "基金商城", "旅游基金用起来", "礼品多多", true));
+//		list.add(new HomeMessageSearch(2, R.drawable.ic_launcher, "发现更多",
+//				"七洲有礼 在线互动 同城聚会", "惊喜活动天天有", false));
+//		list.add(new HomeMessageSearch(2, R.drawable.ic_launcher, "基金商城",
+//				"旅游基金用起来", "礼品多多", true));
 		String[] tap = new String[] { "玩转七洲", "", "", "", "", "", "", "" };
 		for (int i = 0; i < listData.size(); i++) {
 
 			ArrayList<GoodList> goodlist = listData.get(i).getList();
-			list.add(new HomeMessageContent(3, goodlist.get(0).getImg(), goodlist.get(1).getImg(),
-					goodlist.get(2).getImg(), goodlist.get(3).getImg(), goodlist.get(4).getImg(),
-					goodlist.get(5).getImg(), goodlist.get(6).getImg(), goodlist.get(7).getImg(), tap[i],
-					listData.get(i).getTitle(), listData.get(i).getText(), goodlist.get(1).getName(),
-					goodlist.get(2).getName(), goodlist.get(3).getName(), goodlist.get(4).getName(),
-					goodlist.get(5).getName(), goodlist.get(6).getName(), goodlist.get(6).getName(),
-					goodlist.get(7).getName(),
+			list.add(new HomeMessageContent(3, goodlist.get(0).getImg(),
+					goodlist.get(1).getImg(), goodlist.get(2).getImg(),
+					goodlist.get(3).getImg(), goodlist.get(4).getImg(),
+					goodlist.get(5).getImg(), goodlist.get(6).getImg(),
+					goodlist.get(7).getImg(), tap[i], listData.get(i)
+							.getTitle(), listData.get(i).getText(), goodlist
+							.get(1).getName(), goodlist.get(2).getName(),
+					goodlist.get(3).getName(), goodlist.get(4).getName(),
+					goodlist.get(5).getName(), goodlist.get(6).getName(),
+					goodlist.get(6).getName(), goodlist.get(7).getName(),
 					new Url("http://www.7zhou.com/" + goodlist.get(0).getUrl(),
 							"http://www.7zhou.com/" + goodlist.get(1).getUrl(),
 							"http://www.7zhou.com/" + goodlist.get(2).getUrl(),
