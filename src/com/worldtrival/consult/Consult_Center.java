@@ -12,35 +12,32 @@ import com.worldtrival.bean.OrgBean;
 import com.worldtrival.utils.Node;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemLongClickListener;
-import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.TextView;
 
-public class Consult_Center extends Activity {
+public class Consult_Center extends Activity implements android.view.View.OnClickListener {
 	private ListView mTree;
 	private SimpleTreeListViewAdapter<OrgBean> mAdapter;
 	private List<FileBean> mDatas;
 	private List<OrgBean> mDatas2;
-
+	private TextView mbarNext_text;
+	private ImageView mGoBack;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.consult_more_center);
-
+		mbarNext_text = (TextView)findViewById(R.id.bar_next_text);
+		mGoBack = (ImageView) findViewById(R.id.top_back);
 		mTree = (ListView) findViewById(R.id.id_listview);
-
+		mGoBack.setOnClickListener(this);
+		mbarNext_text.setText("咨询中心");
 		initDatas();
 		try
 		{
@@ -57,6 +54,7 @@ public class Consult_Center extends Activity {
 	//点击跳转问题页面
 	private void initEvent()
 	{
+		
 		mAdapter.setOnTreeNodeClickListener(new OnTreeNodeClickListener()
 		{
 			@Override
@@ -266,6 +264,18 @@ public class Consult_Center extends Activity {
 		bean2 = new OrgBean(23, 4, this.getResources().getStringArray(R.array.question)[18]);
 		mDatas2.add(bean2);
 
+	}
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.top_back:
+			finish();
+			break;
+
+		default:
+			break;
+		}
+		
 	}
 
 }

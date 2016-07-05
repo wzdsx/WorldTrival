@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/local_goods_list"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/local_goods_list"
     android:orientation="horizontal" >
 
     <ImageView
@@ -45,7 +45,6 @@
             android:text="100"
             android:textColor="@color/orange"
             android:textSize="15sp" />
-
     </RelativeLayout>
 
 </LinearLayout>

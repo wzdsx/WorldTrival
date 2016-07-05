@@ -15,7 +15,11 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+/**
+ * Fragment咨询主页面
+ * @author Administrator
+ *
+ */
 public class ConsultFragment extends Fragment implements OnClickListener {
 	private View view;
 	private ImageView mOnlineCon;
@@ -27,6 +31,7 @@ public class ConsultFragment extends Fragment implements OnClickListener {
 	private TextView mQuestitm_02;
 	private TextView mQuestitm_03;
 	private TextView mQuestitm_04;
+	private TextView mtop_text;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -60,7 +65,8 @@ public class ConsultFragment extends Fragment implements OnClickListener {
 		mQuestitm_02 = (TextView) view.findViewById(R.id.consult_text3);
 		mQuestitm_03 = (TextView) view.findViewById(R.id.consult_text4);
 		mQuestitm_04 = (TextView) view.findViewById(R.id.consult_text5);
-
+		mtop_text = (TextView) view.findViewById(R.id.top_text);
+		mtop_text.setText("咨询");
 	}
 
 	// 点击事件

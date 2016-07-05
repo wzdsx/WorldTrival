@@ -3,10 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-	<com.worldtrival.init.LoadListView 
-	    android:id="@+id/fragment_contient_listview"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    ></com.worldtrival.init.LoadListView> 
+
+    <com.worldtrival.init.LoadListView
+        android:id="@+id/fragment_contient_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </com.worldtrival.init.LoadListView>
 
 </LinearLayout>

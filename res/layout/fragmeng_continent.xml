@@ -7,9 +7,9 @@
         android:id="@+id/fragment_continent_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true" 
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp">
+        android:layout_alignParentTop="true"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp" >
 
         <TextView
             android:id="@+id/fragment_continent_adress"
@@ -35,11 +35,13 @@
             android:gravity="center_horizontal"
             android:text="销量" />
     </LinearLayout>
-	<LinearLayout 
-	    android:id="@+id/fragment_contient"
-	    android:layout_width="match_parent"
-	    android:layout_height="match_parent"
-	    android:layout_below="@id/fragment_continent_title"
-	    android:orientation="vertical"
-	    ></LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fragment_contient"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fragment_continent_title"
+        android:orientation="vertical" >
+    </LinearLayout>
+
 </RelativeLayout>

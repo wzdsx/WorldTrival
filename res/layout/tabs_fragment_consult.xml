@@ -7,6 +7,8 @@
     android:orientation="vertical"
     android:weightSum="1.0" >
 
+    <include layout="@layout/top_bar_main" />
+
     <ImageView
         android:id="@+id/mConsultHeadImg"
         android:layout_width="match_parent"
@@ -118,7 +120,7 @@
             android:textSize="13.0sp" />
     </RelativeLayout>
 
-     <include layout="@layout/tabs_fragment_listline"/>
+    <include layout="@layout/tabs_fragment_listline" />
 
     <LinearLayout
         android:id="@+id/mFAQLayoutRoot"
@@ -127,6 +129,6 @@
         android:orientation="vertical"
         android:paddingTop="5.0dp" />
 
-   <include layout="@layout/tabs_fragment_consult_fag_item"/>
+    <include layout="@layout/tabs_fragment_consult_fag_item" />
 
 </LinearLayout>

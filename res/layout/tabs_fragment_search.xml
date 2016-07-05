@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent" >
 
-     <LinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-       
         android:orientation="vertical" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="#00be39"
+            android:background="#00be3A"
             android:orientation="horizontal" >
 
             <ImageView
-                android:layout_gravity="center_vertical"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
                 android:layout_marginLeft="5dp"
                 android:src="@drawable/logos_conew1" />
 
@@ -32,11 +30,11 @@
                 android:textSize="20dp" />
         </LinearLayout>
 
-        <ListView 
-             android:id="@+id/lv"
+        <ListView
+            android:id="@+id/lv"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" ></ListView>
-
+            android:layout_height="match_parent" >
+        </ListView>
     </LinearLayout>
 
 </RelativeLayout>

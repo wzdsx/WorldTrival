@@ -13,9 +13,9 @@
         android:gravity="center_vertical"
         android:paddingLeft="16.0dp"
         android:singleLine="true"
+        android:text="@string/consult_Text0"
         android:textColor="@color/text_color_default"
-        android:textSize="15.0sp" 
-        android:text="@string/consult_Text0"/>
+        android:textSize="15.0sp" />
 
     <include layout="@layout/tabs_fragment_listline" />
 
@@ -27,9 +27,9 @@
         android:gravity="center_vertical"
         android:paddingLeft="16.0dp"
         android:singleLine="true"
+        android:text="@string/consult_Text1"
         android:textColor="@color/text_color_default"
-        android:textSize="15.0sp" 
-        android:text="@string/consult_Text1"/>
+        android:textSize="15.0sp" />
 
     <include layout="@layout/tabs_fragment_listline" />
 
@@ -41,9 +41,9 @@
         android:gravity="center_vertical"
         android:paddingLeft="16.0dp"
         android:singleLine="true"
+        android:text="@string/consult_Text2"
         android:textColor="@color/text_color_default"
-        android:textSize="15.0sp" 
-        android:text="@string/consult_Text2"/>
+        android:textSize="15.0sp" />
 
     <include layout="@layout/tabs_fragment_listline" />
 
@@ -55,9 +55,9 @@
         android:gravity="center_vertical"
         android:paddingLeft="16.0dp"
         android:singleLine="true"
+        android:text="@string/consult_Text3"
         android:textColor="@color/text_color_default"
-        android:textSize="15.0sp" 
-        android:text="@string/consult_Text3"/>
+        android:textSize="15.0sp" />
 
     <include layout="@layout/tabs_fragment_listline" />
 
@@ -69,8 +69,8 @@
         android:gravity="center_vertical"
         android:paddingLeft="16.0dp"
         android:singleLine="true"
+        android:text="@string/consult_Text4"
         android:textColor="@color/text_color_default"
-        android:textSize="15.0sp" 
-        android:text="@string/consult_Text4"/>
+        android:textSize="15.0sp" />
 
 </LinearLayout>

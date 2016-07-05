@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="white">#ffffffff</color>
     <color name="yellow">#fff7d23e</color>
     <color name="text_color_default">#ff808080</color>
@@ -11,4 +12,5 @@
     <color name="action_bar">#ff00be3a</color>
     <color name="orange">#e35000</color>
     <color name="color_hr">#E5E5E5</color>
+
 </resources>

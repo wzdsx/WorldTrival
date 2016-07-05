@@ -3,40 +3,14 @@ package com.fragment.worldtrival;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentSender.SendIntentException;
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
-
 import com.fragmentadapter.worldtrival.HomeFragmentAdapter;
-import com.lidroid.xutils.BitmapUtils;
 import com.ui.worldtrival.HomeActivityDialog;
 import com.ui.worldtrival.R;
 import com.ui.worldtrival.WebActivity;
@@ -45,11 +19,25 @@ import com.worldtrival.base.BaseHomeMessage;
 import com.worldtrival.base.Url;
 import com.worldtrival.bean.GoodList;
 import com.worldtrival.bean.ListViewData;
-import com.worldtrival.init.HomeJson;
 import com.worldtrival.message.HomeMessageContent;
 import com.worldtrival.message.HomeMessageLocation;
-import com.worldtrival.message.HomeMessageSearch;
 import com.worldtrival.message.HomeMessageZhou;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
 
 /**
  * 首页 Fragment

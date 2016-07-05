@@ -8,11 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Consult_Question extends Activity {
+public class Consult_Question extends Activity implements OnClickListener {
 	private TextView mTitle;
 	private TextView mContent;
+	private TextView mbarNext_text;
+	private ImageView mGoBack;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -20,6 +23,7 @@ public class Consult_Question extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.consult_question);
 		initView();
+		mGoBack.setOnClickListener(this);
 		receive();
 	}
 	private void receive() {
@@ -110,6 +114,20 @@ public class Consult_Question extends Activity {
 	private void initView() {
 		mTitle = (TextView) findViewById(R.id.question);
 		mContent = (TextView) findViewById(R.id.answer);
+		mGoBack = (ImageView) findViewById(R.id.top_back);
+		mbarNext_text = (TextView)findViewById(R.id.bar_next_text);
+		mbarNext_text.setText("问题详情");
+	}
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.top_back:
+			finish();
+			break;
+
+		default:
+			break;
+		}
 		
 	}
 	

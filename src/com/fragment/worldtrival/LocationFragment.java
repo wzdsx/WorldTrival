@@ -59,7 +59,7 @@ public class LocationFragment extends Fragment {
 	private String latitudeShangHai = "31.05";
 	private String longitudeXiann = "109.013273";
 	private String latitudeXiann = "34.24985";
-
+	private TextView mtop_bar;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -217,6 +217,9 @@ public class LocationFragment extends Fragment {
 		root2 = (RelativeLayout) view.findViewById(R.id.root2);
 		root3 = (RelativeLayout) view.findViewById(R.id.root3);
 		root4 = (RelativeLayout) view.findViewById(R.id.root4);
+		
+		mtop_bar = (TextView) view.findViewById(R.id.top_text);
+		mtop_bar.setText("当地");
 	}
 
 	private String webLocalRequest() {

@@ -9,9 +9,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:orientation="vertical" 
-		android:gravity="center_horizontal"
-        >
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
 
         <ImageView
             android:id="@+id/location_location_image"
@@ -26,19 +25,19 @@
             android:layout_height="wrap_content"
             android:text="当地玩乐" />
     </LinearLayout>
-	<View 
-		android:layout_width="1dp"
-		android:layout_height="match_parent"
-		android:background="#ccc"
-	    />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="#ccc" />
+
     <LinearLayout
         android:id="@+id/location_airport"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:orientation="vertical" 
         android:gravity="center_horizontal"
-        >
+        android:orientation="vertical" >
 
         <ImageView
             android:id="@+id/location_airport_image"
@@ -53,58 +52,59 @@
             android:layout_height="wrap_content"
             android:text="机场接送" />
     </LinearLayout>
-	<View 
-	    android:layout_width="1dp"
-	    android:layout_height="match_parent"
-	    android:background="#ccc"
-	    />
-	<LinearLayout 
-	    android:id="@+id/location_hotel"
-	    android:layout_width="0dp"
-	    android:layout_weight="1"
-	    android:layout_height="wrap_content"
-	    android:orientation="vertical"
-	    android:gravity="center_horizontal"
-	    >
-	    <ImageView 
-	        android:id="@+id/location_hotel_image"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:src="@drawable/icon_hotel_trip"
-	        android:scaleType="fitXY"
-	        />
-	    <TextView 
-	        android:id="@+id/location_hotel_text"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="酒店度假村"
-	        />
-	</LinearLayout>
-	<View 
-	    android:layout_width="1dp"
-	    android:layout_height="match_parent"
-	    android:background="#ccc"
-	    />
-	<LinearLayout 
-	    android:id="@+id/location_friend"
-	    android:layout_width="0dp"
-	    android:layout_weight="1"
-	    android:layout_height="wrap_content"
-	    android:orientation="vertical"
-	    android:gravity="center_horizontal"
-	    >
-	    <ImageView 
-	        android:id="@+id/location_friend_image"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:src="@drawable/index_service_classify_tab4"
-	        android:scaleType="fitXY"
-	        />
-	    <TextView 
-	        android:id="@+id/location_friend_text"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="结伴同游"
-	        />
-	</LinearLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="#ccc" />
+
+    <LinearLayout
+        android:id="@+id/location_hotel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/location_hotel_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_hotel_trip" />
+
+        <TextView
+            android:id="@+id/location_hotel_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="酒店度假村" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="#ccc" />
+
+    <LinearLayout
+        android:id="@+id/location_friend"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/location_friend_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/index_service_classify_tab4" />
+
+        <TextView
+            android:id="@+id/location_friend_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="结伴同游" />
+    </LinearLayout>
+
 </LinearLayout>
