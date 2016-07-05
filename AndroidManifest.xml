@@ -64,13 +64,13 @@
         <!-- 安卓机器人页 -->
         <activity android:name="com.worldtrival.consult.Consult_Online" >
         </activity>
+        <activity android:name="com.ui.worldtrival.World_MainActivity" />
+        <activity android:name="com.ui.worldtrival.WebActivity" />
         <activity android:name="com.ui.worldtrival.Local_List_Goods" />
         <activity android:name="com.ui.worldtrival.Local_Ticket" />
         <activity android:name="com.ui.worldtrival.Local_Insurance" />
-        <activity android:name="com.ui.worldtrival.Local_CityIntroduce" />
-        <activity android:name="com.ui.worldtrival.World_MainActivity" />
-        <activity android:name="com.ui.worldtrival.WebActivity" />
         <activity android:name="com.ui.worldtrival.Local_Map_activaty" />
+        <activity android:name="com.ui.worldtrival.Local_CityIntroduce" />
         <activity
             android:name="com.ui.worldtrival.HomeActivityDialog"
             android:theme="@style/HomeActivityAnim" />
@@ -118,12 +118,10 @@
             android:name="UMENG_APPKEY"
             android:value="54abc3ccfd98c5c6c0000ec1" >
         </meta-data>
-        <!-- ###################添加高德地图###################### -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="bec7c6abf19b8641fdaab81fd9e98448" >
         </meta-data>
-
         <!-- 定位需要的服务 使用2.0的定位需要加上这个 -->
 
         <service android:name="com.amap.api.location.APSService" >

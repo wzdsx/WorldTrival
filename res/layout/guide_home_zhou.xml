@@ -26,9 +26,10 @@
                 android:id="@+id/world_Asia_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
                 android:scaleType="fitXY"
-                android:src="@drawable/asian" />
+                android:src="@drawable/asian"
+                android:layout_gravity="center_horizontal"
+                 />
 
             <TextView
                 android:id="@+id/world_Asia_text"
@@ -52,9 +53,10 @@
                 android:id="@+id/world_Europe_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
                 android:scaleType="fitXY"
-                android:src="@drawable/europe" />
+                android:src="@drawable/europe" 
+                android:layout_gravity="center_horizontal"
+                />
 
             <TextView
                 android:id="@+id/world_Europe_text"
@@ -78,9 +80,10 @@
                 android:id="@+id/world_Oceania_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
                 android:scaleType="fitXY"
-                android:src="@drawable/oceania" />
+                android:src="@drawable/oceania" 
+                android:layout_gravity="center_horizontal"
+                />
 
             <TextView
                 android:id="@+id/world_Oceania_text"
@@ -104,9 +107,10 @@
                 android:id="@+id/world_Africa_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
                 android:scaleType="fitXY"
-                android:src="@drawable/africa" />
+                android:src="@drawable/africa" 
+                android:layout_gravity="center_horizontal"
+                />
 
             <TextView
                 android:id="@+id/world_Africa_text"
@@ -130,9 +134,10 @@
                 android:id="@+id/world_NorAmer_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
                 android:scaleType="fitXY"
-                android:src="@drawable/south_america" />
+                android:src="@drawable/south_america" 
+                android:layout_gravity="center_horizontal"
+                />
 
             <TextView
                 android:id="@+id/world_NorAmer_text"
@@ -156,9 +161,10 @@
                 android:id="@+id/world_EastAmer_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
                 android:scaleType="fitXY"
-                android:src="@drawable/north_america" />
+                android:src="@drawable/north_america" 
+                android:layout_gravity="center_horizontal"
+                />
 
             <TextView
                 android:id="@+id/world_EastAmer_text"
@@ -182,9 +188,10 @@
                 android:id="@+id/world_Antrac_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
                 android:scaleType="fitXY"
-                android:src="@drawable/antarctica" />
+                android:src="@drawable/antarctica" 
+                android:layout_gravity="center_horizontal"
+                />
 
             <TextView
                 android:id="@+id/world_Antrac_text"

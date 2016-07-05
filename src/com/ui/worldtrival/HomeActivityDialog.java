@@ -10,11 +10,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.text.Normalizer;
 import java.util.ArrayList;
-
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,9 +26,6 @@ import com.worldtrival.bean.Recommend;
 import com.worldtrival.bean.Status;
 
 import android.app.Activity;
-
-import android.content.Intent;
-
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;

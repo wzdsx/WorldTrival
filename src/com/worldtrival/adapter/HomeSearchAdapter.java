@@ -22,6 +22,8 @@ public class HomeSearchAdapter extends BaseAdapter {
 	private Context context;
 	private LayoutInflater inflater;
 	private boolean isFirst ;
+	
+	
 	public HomeSearchAdapter(List<Recommend> list, Context context) {
 		super();
 		this.list = list;
@@ -32,6 +34,7 @@ public class HomeSearchAdapter extends BaseAdapter {
 
 	@Override
 	public int getCount() {
+		// TODO Auto-generated method stub
 		return list.size();
 	}
 

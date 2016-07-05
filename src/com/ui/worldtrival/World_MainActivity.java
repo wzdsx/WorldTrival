@@ -12,9 +12,6 @@ import com.fragmentadapter.worldtrival.GuideFragmentAdapter;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -36,8 +33,11 @@ import android.widget.Toast;
 
 /**
  * 
- * @author Joker 主Activity 包含底部导航和ViewPager ViewPager中用Fragment实现
- *         function:1.点击底部导航viewPager改变 2.滑动ViewPager底部导航随之改变
+ * @author Joker 
+ * 主Activity
+ * 包含底部导航和ViewPager ViewPager中用Fragment实现
+ * function:1.点击底部导航viewPager改变
+ * 2.滑动ViewPager底部导航随之改变
  * 
  */
 public class World_MainActivity extends FragmentActivity implements
@@ -64,51 +64,19 @@ public class World_MainActivity extends FragmentActivity implements
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_world__main);
-		
-		
-		
-//		//获取地理位置管理器  
-//        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);  
-//        //获取所有可用的位置提供器  
-//        List<String> providers = locationManager.getProviders(true);  
-//        if(providers.contains(LocationManager.GPS_PROVIDER)){  
-//            //如果是GPS  
-//            locationProvider = LocationManager.GPS_PROVIDER;  
-//        }else if(providers.contains(LocationManager.NETWORK_PROVIDER)){  
-//            //如果是Network  
-//            locationProvider = LocationManager.NETWORK_PROVIDER;  
-//        }else{  
-//            Toast.makeText(this, "无法获得当地地理位置", Toast.LENGTH_SHORT).show();  
-//            return ;  
-//        }  
-//        //获取Location  
-//        Location location = locationManager.getLastKnownLocation(locationProvider);  
-//        if(location!=null){  
-//            //不为空,获得地理位置经纬度  
-//            getLocation(location);  
-//        }  
-//        //监视地理位置变化  
-//        locationManager.requestLocationUpdates(locationProvider, 3000, 1, locationListener);
-		
-		
-		
-		
-		// 初始化控件
+		//初始化控件
 		initView();
-		// 初始化属性 使首页成为默认值
+		//初始化属性	使首页成为默认值
 		initViewPara();
-		// 添加数据源 List<Fragment>
+		//添加数据源 List<Fragment>
 		addListResource();
-		// 适配器
+		//适配器
 		initAdapter();
-		// 添加监听
+		//添加监听
 		addListener();
+	
 	}
 
-	
-	
-	
-	
 	private void initViewPara() {
 		home_image.setImageResource(R.drawable.home_click);
 		home_text.setTextColor(Color.GREEN);
@@ -122,6 +90,7 @@ public class World_MainActivity extends FragmentActivity implements
 		guide_location.setOnClickListener(this);
 		guide_search.setOnClickListener(this);
 		guide_mine.setOnClickListener(this);
+		
 	}
 
 	private void initAdapter() {
@@ -131,7 +100,7 @@ public class World_MainActivity extends FragmentActivity implements
 	}
 
 	private void addListResource() {
-		// 创建5个Fragment将他们存储到List集合中
+		//创建5个Fragment将他们存储到List集合中
 		listfragment = new ArrayList<Fragment>();
 		listfragment.add(new HomeFragment());
 		listfragment.add(new ConsultFragment());
@@ -158,6 +127,7 @@ public class World_MainActivity extends FragmentActivity implements
 		guide_location = (LinearLayout) findViewById(R.id.main_guide_location);
 		guide_search = (LinearLayout) findViewById(R.id.main_guide_search);
 		guide_mine = (LinearLayout) findViewById(R.id.main_guide_mine);
+//		home_image.setImageResource(R.drawable.home_click);
 	}
 
 	@Override
@@ -174,7 +144,7 @@ public class World_MainActivity extends FragmentActivity implements
 
 	@Override
 	public void onPageSelected(int arg0) {
-		// 滑动ViewPager 使 导航改变
+		//滑动ViewPager 使 导航改变
 		switch (arg0) {
 		case 0:
 			home_image.setImageResource(R.drawable.home_click);
@@ -245,11 +215,11 @@ public class World_MainActivity extends FragmentActivity implements
 	@Override
 	public void onClick(View v) {
 		/**
-		 * 点击导航 使 viewPager 改变
+		* 点击导航 使 viewPager 改变
 		 */
-		switch (v.getId()) {
+		switch(v.getId()){
 		case R.id.main_guide_home:
-			// 设置当前页卡
+			//设置当前页卡
 			viewpager.setCurrentItem(0);
 			break;
 		case R.id.main_guide_consult:
@@ -305,4 +275,6 @@ public class World_MainActivity extends FragmentActivity implements
 
 	
 
+	
+	
 }
