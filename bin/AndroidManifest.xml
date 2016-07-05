@@ -7,14 +7,36 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="19" />
-	<uses-permission android:name="android.permission.INTERNET"/>
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- 地图包、搜索包需要的基础权限 -->
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- 定位包、导航包需要的额外权限（注：基础权限也需要） -->
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppBaseTheme" 
+      
         >
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="bec7c6abf19b8641fdaab81fd9e98448" >
+        </meta-data>
+
         <activity
             android:name="com.ui.worldtrival.MainActivity"
             android:label="@string/app_name" >
@@ -24,14 +46,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity 
-            android:name="com.ui.worldtrival.World_MainActivity"/>
-        <activity 
-            android:name="com.ui.worldtrival.WebActivity"/>
-        <activity 
+        <activity android:name="com.ui.worldtrival.World_MainActivity" />
+        <activity android:name="com.ui.worldtrival.Local_Map_activaty" />
+        <activity android:name="com.ui.worldtrival.WebActivity" />
+        <activity android:name="com.ui.worldtrival.Local_List_Goods" />
+        <activity android:name="com.ui.worldtrival.Local_Ticket" />
+        <activity android:name="com.ui.worldtrival.Local_Insurance" />
+        <activity android:name="com.ui.worldtrival.Local_CityIntroduce" />
+        <activity
             android:name="com.ui.worldtrival.HomeActivityDialog"
-            android:theme="@style/HomeActivityAnim"
-            />
+            android:theme="@style/HomeActivityAnim" />
+        <!-- 定位需要的服务 使用2.0的定位需要加上这个 -->
+
+        <service android:name="com.amap.api.location.APSService" >
+        </service>
     </application>
+c
 
 </manifest>

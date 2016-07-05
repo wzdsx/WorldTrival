@@ -11,7 +11,6 @@ import com.fragment.worldtrival.SearchFragment;
 import com.fragmentadapter.worldtrival.GuideFragmentAdapter;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
@@ -23,7 +22,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -43,7 +41,7 @@ import android.widget.Toast;
  * 
  */
 public class World_MainActivity extends FragmentActivity implements
-		OnPageChangeListener, OnClickListener {
+		OnPageChangeListener, OnClickListener{
 	private List<Fragment> listfragment;
 	private ViewPager viewpager;
 	private GuideFragmentAdapter fragAdapter;
@@ -53,21 +51,14 @@ public class World_MainActivity extends FragmentActivity implements
 			mine_text;
 	private LinearLayout guide_home, guide_consult, guide_location,
 			guide_search, guide_mine;
-	// 自定义Toast
-
-	private Toast toast;
-
-	private boolean flag = false; // 判断物理返回按键
-	// handler de what and duration
+	//自定义Toast
+	
+	private Toast toast ;
+	
+	private boolean flag = false;    //判断物理返回按键
+	//handler de what and duration
 	private final int WHAT = 0x1000;
-	private final int TIME = 2000;
-
-	// 获取经纬度
-//	private LocationManager locationManager;
-//	private String locationProvider;
-	private static String longitude = "108.9390564";  // 经度
-	private static String latitude = "34.335498488";  // 纬度
-
+	private final int TIME = 2000; 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -112,11 +103,6 @@ public class World_MainActivity extends FragmentActivity implements
 		initAdapter();
 		// 添加监听
 		addListener();
-		
-		
-		
-		  
-
 	}
 
 	
@@ -136,7 +122,6 @@ public class World_MainActivity extends FragmentActivity implements
 		guide_location.setOnClickListener(this);
 		guide_search.setOnClickListener(this);
 		guide_mine.setOnClickListener(this);
-
 	}
 
 	private void initAdapter() {
@@ -173,7 +158,6 @@ public class World_MainActivity extends FragmentActivity implements
 		guide_location = (LinearLayout) findViewById(R.id.main_guide_location);
 		guide_search = (LinearLayout) findViewById(R.id.main_guide_search);
 		guide_mine = (LinearLayout) findViewById(R.id.main_guide_mine);
-		// home_image.setImageResource(R.drawable.home_click);
 	}
 
 	@Override
@@ -282,98 +266,43 @@ public class World_MainActivity extends FragmentActivity implements
 			break;
 		}
 	}
-
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-
-		if (keyCode == KeyEvent.KEYCODE_BACK) {
-			if (!flag) {
+		
+		if(keyCode == KeyEvent.KEYCODE_BACK){
+			if(!flag){
 				flag = true;
 				toast = Toast.makeText(this, "再点击一次退出环球", TIME);
 				toast.setGravity(17, 0, -30);
 				toast.show();
 				handler.sendEmptyMessageDelayed(WHAT, TIME);
-			} else {
+			}else{
 				finish();
 			}
 		}
 		return false;
 	}
-
-	@SuppressLint("HandlerLeak")
-	private Handler handler = new Handler() {
+	@SuppressLint("HandlerLeak") 
+	private Handler handler = new Handler(){
 
 		@Override
 		public void handleMessage(Message msg) {
-			switch (msg.what) {
+			switch(msg.what){
 			case WHAT:
-				flag = false;
+				flag  = false;
 				break;
 			}
 		}
-
+		
 	};
-
 	@Override
 	protected void onPause() {
-		if (toast != null)
+		if(toast != null)
 			toast.cancel();
 		super.onPause();
-
+		
 	}
+
 	
-	
-//	/** 
-//     * 显示地理位置经度和纬度信息 
-//     * @param location 
-//     */  
-//    private void getLocation(Location location){  
-//    	longitude = "" + location.getLongitude();
-//    	latitude = "" + location.getLatitude();
-//    	
-//    	Log.e("location", longitude + "//" + latitude);
-//    	
-//    	
-//    	
-//    }  
-//      
-//    /** 
-//     * LocationListern监听器 
-//     * 参数：地理位置提供器、监听位置变化的时间间隔、位置变化的距离间隔、LocationListener监听器 
-//     */  
-//      
-//    LocationListener locationListener =  new LocationListener() {  
-//          
-//        @Override  
-//        public void onStatusChanged(String provider, int status, Bundle arg2) {  
-//              
-//        }  
-//          
-//        @Override  
-//        public void onProviderEnabled(String provider) {  
-//              
-//        }  
-//          
-//        @Override  
-//        public void onProviderDisabled(String provider) {  
-//              
-//        }  
-//          
-//        @Override  
-//        public void onLocationChanged(Location location) {  
-//            //如果位置发生变化,重新获得 
-//            getLocation(location);  
-//              
-//        }  
-//    };  
-//      
-//    @Override  
-//    protected void onDestroy() {  
-//        super.onDestroy();  
-//        if(locationManager!=null){  
-//            //移除监听器  
-//            locationManager.removeUpdates(locationListener);  
-//        }  
-//    }  
 
 }

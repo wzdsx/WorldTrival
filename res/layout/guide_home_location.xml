@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scaleType="fitXY"
-            android:src="@drawable/ic_launcher" />
+            android:src="@drawable/icon_visit_the_local" />
 
         <TextView
             android:id="@+id/location_location_text"
@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scaleType="fitXY"
-            android:src="@drawable/ic_launcher" />
+            android:src="@drawable/airport_shuttle" />
 
         <TextView
             android:id="@+id/location_airport_text"
@@ -70,7 +70,7 @@
 	        android:id="@+id/location_hotel_image"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:src="@drawable/ic_launcher"
+	        android:src="@drawable/icon_hotel_trip"
 	        android:scaleType="fitXY"
 	        />
 	    <TextView 
@@ -97,7 +97,7 @@
 	        android:id="@+id/location_friend_image"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:src="@drawable/ic_launcher"
+	        android:src="@drawable/index_service_classify_tab4"
 	        android:scaleType="fitXY"
 	        />
 	    <TextView 

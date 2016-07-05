@@ -17,7 +17,6 @@ public class HomeMessageZhou extends BaseHomeMessage {
 		this.image5 = image5;
 		this.image6 = image6;
 		this.image7 = image7; 
-
 		this.text1 = text1;
 		this.text2 = text2;
 		this.text3 = text3;

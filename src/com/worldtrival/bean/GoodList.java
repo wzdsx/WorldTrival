@@ -1,14 +1,13 @@
 package com.worldtrival.bean;
 
 public class GoodList {
-	private String name , img , url , id;
+	private String name , img , url;
 
-	public GoodList(String name, String img, String url , String id) {
+	public GoodList(String name, String img, String url) {
 		super();
 		this.name = name;
 		this.img = img;
 		this.url = url;
-		this.id = id;
 	}
 
 	public GoodList() {
@@ -37,15 +36,6 @@ public class GoodList {
 
 	public void setUrl(String url) {
 		this.url = url;
-	}
-	
-	
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
 	}
 
 	@Override

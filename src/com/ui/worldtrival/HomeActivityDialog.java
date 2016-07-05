@@ -10,9 +10,13 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.text.Normalizer;
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+=======
+import java.util.List;
+>>>>>>> 146dd94b84aaa2c834c3e5c0fdb3fcfd2c96197f
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,7 +32,10 @@ import com.worldtrival.bean.Recommend;
 import com.worldtrival.bean.Status;
 
 import android.app.Activity;
+<<<<<<< HEAD
 import android.content.Intent;
+=======
+>>>>>>> 146dd94b84aaa2c834c3e5c0fdb3fcfd2c96197f
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -60,29 +67,9 @@ public class HomeActivityDialog extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Intent intent = getIntent();
-		final String json = intent.getStringExtra("json");
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.home_search_activitydialog);
-//		Log.e("trans", json);
 		initView();
 		new Thread(new Runnable() {
-			
-			@Override
-			public void run() {
-				List<Recommend> listRecommend = jsonFirstPage(json);
-				String json_normal = getNormaoJSON(url_normal);
-				HomeSearchData search_data = jsonParse(json_normal);
-				Map<String, Object> m = new HashMap<String, Object>();
-				m.put("listRecommend", listRecommend);
-				m.put("search_data", search_data);
-				Message msg = new Message();
-				msg.what = NORMAL;
-				msg.obj = m;
-				handler.sendMessage(msg);
-			}
-		}).start();
-		/*new Thread(new Runnable() {
 
 			@Override
 			public void run() {
@@ -95,40 +82,12 @@ public class HomeActivityDialog extends Activity {
 
 			}
 		}).start();
-*/		addListener();
+		addListener();
 	}
-
-	
-	protected List<Recommend> jsonFirstPage(String json) {
-		try {
-			JSONObject jo = new JSONObject(json);
-			JSONArray array = jo.getJSONArray("data");
-			List<Recommend> list = new ArrayList<Recommend>();
-			Recommend recommend = null;
-			for (int i = 0; i < array.length(); i++) {
-				JSONObject data = array.getJSONObject(i);
-				JSONArray goods_list = data.getJSONArray("goods_list");
-				for(int j = 0 ; j < goods_list.length() ; j++){
-					JSONObject object = goods_list.getJSONObject(j);
-					recommend = new Recommend();
-					recommend.setGoods_id(object.getString("id"));
-					recommend.setUrl(object.getString("url"));
-					list.add(recommend);
-				}
-			}
-			Log.e("list", list.get(1).getUrl());
-			return list;
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
-	}
-
 
 	private void addListener() {
 		edittext.addTextChangedListener(new TextWatcher() {
-			
+
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before,
 					int count) {
@@ -154,7 +113,6 @@ public class HomeActivityDialog extends Activity {
 						String json_search = getSearchJson(
 								"http://120.26.208.234:10320/?url=search_hint",
 								search);
-//						HomeSearchData search_data = jsonParse(json_search);
 						HomeSearchHint search_hint = jsonSearchParse(json_search);
 						Message msg = new Message();
 						msg.what = SEARCH;
@@ -225,16 +183,13 @@ public class HomeActivityDialog extends Activity {
 	}
 
 	class MyHandler extends Handler {
-		@Override 
+		@Override
 		public void handleMessage(Message msg) {
 			super.handleMessage(msg);
 			switch (msg.what) {
 			case NORMAL:
 //				HomeSearchData search_data = jsonParse((String) msg.obj);
-				Map<String,Object> m = (Map<String, Object>) msg.obj;
-				HomeSearchData search_data = (HomeSearchData) m.get("search_data");
-				List<Recommend> listRecommend = (List<Recommend>) m.get("listRecommend");
-				addList(search_data);
+				addList((HomeSearchData)msg.obj);
 				adapter = new HomeSearchAdapter(list, HomeActivityDialog.this);
 				listview.setAdapter(adapter);
 				break;

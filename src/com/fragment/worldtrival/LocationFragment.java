@@ -43,7 +43,6 @@ import android.widget.TextView;
  * ����Fragment
  * 
  */
-
 public class LocationFragment extends Fragment {
 
 	private String sUrllocal = "http://120.26.208.234:10320/?url=local_recommend_main";

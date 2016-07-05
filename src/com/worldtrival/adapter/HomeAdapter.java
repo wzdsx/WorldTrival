@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.lidroid.xutils.BitmapUtils;
+import com.ui.worldtrival.HomeSearchActivity;
 import com.ui.worldtrival.R;
 import com.ui.worldtrival.WebActivity;
 import com.worldtrival.base.BaseHomeMessage;
@@ -33,12 +34,14 @@ public class HomeAdapter extends BaseAdapter {
 	private List<BaseHomeMessage> list;
 	private LayoutInflater mInflater;
 	private ViewPager pager = null;
+	private String url = "http://120.26.208.234:10320/?url=search";
 
+	// http://120.26.208.234:10320/?url=search
 	public HomeAdapter(Context context, List<BaseHomeMessage> list) {
 		super();
 		this.context = context;
 		this.list = list;
-		mInflater = LayoutInflater.from(context); 
+		mInflater = LayoutInflater.from(context);
 	}
 
 	// 2016_6_8
@@ -118,9 +121,9 @@ public class HomeAdapter extends BaseAdapter {
 				holder2.text4 = (TextView) viewItem2
 						.findViewById(R.id.world_Africa_text);
 				holder2.text5 = (TextView) viewItem2
-						.findViewById(R.id.world_EastAmer_text);
-				holder2.text6 = (TextView) viewItem2
 						.findViewById(R.id.world_NorAmer_text);
+				holder2.text6 = (TextView) viewItem2
+						.findViewById(R.id.world_EastAmer_text);
 				holder2.text7 = (TextView) viewItem2
 						.findViewById(R.id.world_Antrac_text);
 				viewItem2.setTag(holder2);
@@ -129,13 +132,7 @@ public class HomeAdapter extends BaseAdapter {
 				holder2 = (ViewHolder2) convertView.getTag();
 			}
 			HomeMessageZhou zhou = (HomeMessageZhou) list.get(position);
-			holder2.image1.setImageResource(zhou.getImage1());
-			holder2.image2.setImageResource(zhou.getImage2());
-			holder2.image3.setImageResource(zhou.getImage3());
-			holder2.image4.setImageResource(zhou.getImage4());
-			holder2.image5.setImageResource(zhou.getImage5());
-			holder2.image6.setImageResource(zhou.getImage6());
-			holder2.image7.setImageResource(zhou.getImage7());
+
 			holder2.text1.setText(zhou.getText1());
 			holder2.text2.setText(zhou.getText2());
 			holder2.text3.setText(zhou.getText3());
@@ -143,7 +140,56 @@ public class HomeAdapter extends BaseAdapter {
 			holder2.text5.setText(zhou.getText5());
 			holder2.text6.setText(zhou.getText6());
 			holder2.text7.setText(zhou.getText7());
-
+			// {"pagination":{"count":10,"page":1},"filter":{"brand_id":"","category_id":"","keywords":"","category_name":"","dest_id":"186","sort_by":"top_sale"}}
+			// {"pagination":{"count":10,"page":
+			holder2.image1
+					.setOnClickListener(new MyClick(
+							"http://120.26.208.234:10320/?url=search",
+							"{\"pagination\":{\"count\":10,\"page\":",
+							"},\"filter\":{\"brand_id\":\"\",\"category_id\":\"\",\"keywords\":\"\",\"category_name\":\"\",\"dest_id\":\"186\",\"sort_by\":\"top_sale\"}}",
+							"亚洲"));
+			// {"pagination":{"count":10,"page":1},"filter":{"brand_id":"","category_id":"","keywords":"","category_name":"","dest_id":"106","sort_by":"top_sale"}}
+			holder2.image2
+					.setOnClickListener(new MyClick(
+							"http://120.26.208.234:10320/?url=search",
+							"{\"pagination\":{\"count\":10,\"page\":",
+							"},\"filter\":{\"brand_id\":\"\",\"category_id\":\"\",\"keywords\":\"\",\"category_name\":\"\",\"dest_id\":\"106\",\"sort_by\":\"top_sale\"}}",
+							"欧洲"));
+			// {"pagination":{"count":10,"page":1},"filter":{"brand_id":"","category_id":"","keywords":"","category_name":"","dest_id":"187","sort_by":"top_sale"}}
+			holder2.image3
+					.setOnClickListener(new MyClick(
+							url,
+							"{\"pagination\":{\"count\":10,\"page\":",
+							"},\"filter\":{\"brand_id\":\"\",\"category_id\":\"\",\"keywords\":\"\",\"category_name\":\"\",\"dest_id\":\"187\",\"sort_by\":\"top_sale\"}}",
+							"大洋洲"));
+			// {"pagination":{"count":10,"page":1},"filter":{"brand_id":"","category_id":"","keywords":"","category_name":"","dest_id":"190","sort_by":"top_sale"}}
+			holder2.image4
+					.setOnClickListener(new MyClick(
+							url,
+							"{\"pagination\":{\"count\":10,\"page\":",
+							"},\"filter\":{\"brand_id\":\"\",\"category_id\":\"\",\"keywords\":\"\",\"category_name\":\"\",\"dest_id\":\"190\",\"sort_by\":\"top_sale\"}}",
+							"非洲"));
+			// {"pagination":{"count":10,"page":1},"filter":{"brand_id":"","category_id":"","keywords":"","category_name":"","dest_id":"188","sort_by":"top_sale"}}
+			holder2.image5
+					.setOnClickListener(new MyClick(
+							url,
+							"{\"pagination\":{\"count\":10,\"page\":",
+							"},\"filter\":{\"brand_id\":\"\",\"category_id\":\"\",\"keywords\":\"\",\"category_name\":\"\",\"dest_id\":\"188\",\"sort_by\":\"top_sale\"}}",
+							"南美洲"));
+			// {"pagination":{"count":10,"page":1},"filter":{"brand_id":"","category_id":"","keywords":"","category_name":"","dest_id":"189","sort_by":"top_sale"}}
+			holder2.image6
+					.setOnClickListener(new MyClick(
+							url,
+							"{\"pagination\":{\"count\":10,\"page\":",
+							"},\"filter\":{\"brand_id\":\"\",\"category_id\":\"\",\"keywords\":\"\",\"category_name\":\"\",\"dest_id\":\"189\",\"sort_by\":\"top_sale\"}}",
+							"北美洲"));
+			// {"pagination":{"count":10,"page":1},"filter":{"brand_id":"","category_id":"","keywords":"","category_name":"","dest_id":"191","sort_by":"top_sale"}}
+			holder2.image7
+					.setOnClickListener(new MyClick(
+							url,
+							"{\"pagination\":{\"count\":10,\"page\":",
+							"},\"filter\":{\"brand_id\":\"\",\"category_id\":\"\",\"keywords\":\"\",\"category_name\":\"\",\"dest_id\":\"191\",\"sort_by\":\"top_sale\"}}",
+							"南极洲"));
 			break;
 		case 1:
 			// 第三种类型
@@ -176,14 +222,33 @@ public class HomeAdapter extends BaseAdapter {
 			}
 			HomeMessageLocation location = (HomeMessageLocation) list
 					.get(position);
-			holder3.image1.setImageResource(location.getImage1());
-			holder3.image2.setImageResource(location.getImage2());
-			holder3.image3.setImageResource(location.getImage3());
-			holder3.image4.setImageResource(location.getImage4());
 			holder3.text1.setText(location.getText1());
 			holder3.text2.setText(location.getText2());
 			holder3.text3.setText(location.getText3());
 			holder3.text4.setText(location.getText4());
+			// {"pagination":{"count":10,"page":1},"filter":{"brand_id":"","category_id":"20","keywords":"","category_name":"","dest_id":"","sort_by":"top_sale"}}
+			holder3.image1
+					.setOnClickListener(new MyClick(
+							url,
+							"{\"pagination\":{\"count\":10,\"page\":",
+							"},\"filter\":{\"brand_id\":\"\",\"category_id\":\"20\",\"keywords\":\"\",\"category_name\":\"\",\"dest_id\":\"\",\"sort_by\":\"top_sale\"}}",
+							"全部目的地"));
+			// {"pagination":{"count":10,"page":1},"filter":{"brand_id":"","category_id":"37","keywords":"","category_name":"","dest_id":"","sort_by":"top_sale"}}
+			holder3.image2
+					.setOnClickListener(new MyClick(
+							url,
+							"{\"pagination\":{\"count\":10,\"page\":",
+							"},\"filter\":{\"brand_id\":\"\",\"category_id\":\"37\",\"keywords\":\"\",\"category_name\":\"\",\"dest_id\":\"\",\"sort_by\":\"top_sale\"}}",
+							"全部目的地"));
+			// {"pagination":{"count":10,"page":1},"filter":{"brand_id":"","category_id":"25","keywords":"","category_name":"","dest_id":"","sort_by":"top_sale"}}
+			holder3.image3
+					.setOnClickListener(new MyClick(
+							url,
+							"{\"pagination\":{\"count\":10,\"page\":",
+							"},\"filter\":{\"brand_id\":\"\",\"category_id\":\"25\",\"keywords\":\"\",\"category_name\":\"\",\"dest_id\":\"\",\"sort_by\":\"top_sale\"}}",
+							"全部目的地"));
+			//
+
 			break;
 		case 2:
 			// 第四种类型
@@ -264,6 +329,14 @@ public class HomeAdapter extends BaseAdapter {
 						.findViewById(R.id.guide_home_content3_text2);
 				holder5.text11 = (TextView) viewItem5
 						.findViewById(R.id.guide_home_content3_text3);
+				holder5.text4.getBackground().setAlpha(80);
+				holder5.text5.getBackground().setAlpha(80);
+				holder5.text6.getBackground().setAlpha(80);
+				holder5.text7.getBackground().setAlpha(80);
+				holder5.text8.getBackground().setAlpha(80);
+				holder5.text9.getBackground().setAlpha(80);
+				holder5.text10.getBackground().setAlpha(80);
+				holder5.text11.getBackground().setAlpha(80);
 
 				viewItem5.setTag(holder5);
 				convertView = viewItem5;
@@ -282,10 +355,10 @@ public class HomeAdapter extends BaseAdapter {
 			bitmap.display(holder5.image6, content.getImage6());
 			bitmap.display(holder5.image7, content.getImage7());
 			bitmap.display(holder5.image8, content.getImage8());
-			if(content.getText1().equals("玩转七洲")){
+			if (content.getText1().equals("玩转七洲")) {
 				holder5.text1.setVisibility(View.VISIBLE);
 				holder5.text1.setText(content.getText1());
-			}else{
+			} else {
 				holder5.text1.setVisibility(View.GONE);
 			}
 			holder5.text2.setText(content.getText2());
@@ -334,7 +407,7 @@ public class HomeAdapter extends BaseAdapter {
 	}
 
 	class ViewHolder5 {
-		TextView text1, text2, text3 ;
+		TextView text1, text2, text3;
 		ImageView image1, image2, image3, image4, image5, image6, image7,
 				image8;
 		TextView text4, text5, text6, text7, text8, text9, text10, text11;
@@ -342,6 +415,19 @@ public class HomeAdapter extends BaseAdapter {
 
 	class MyClick implements OnClickListener {
 		private Url url;
+		private String url_path;
+		private String url_param1;
+		private String url_param2;
+		private String adress;
+
+		public MyClick(String url_path, String url_param1, String url_param2,
+				String adress) {
+			super();
+			this.adress = adress;
+			this.url_path = url_path;
+			this.url_param1 = url_param1;
+			this.url_param2 = url_param2;
+		}
 
 		MyClick(Url url) {
 			this.url = url;
@@ -350,34 +436,107 @@ public class HomeAdapter extends BaseAdapter {
 		@Override
 		public void onClick(View v) {
 			Intent intent = new Intent(context, WebActivity.class);
+			Intent intent1 = new Intent(context, HomeSearchActivity.class);
+			// intent1.putExtra("adress", adress);
+			intent1.putExtra("url_path", url_path);
+			intent1.putExtra("url_param1", url_param1);
+			intent1.putExtra("url_param2", url_param2);
 			switch (v.getId()) {
 			case R.id.guide_home_content1_image1:
 				intent.putExtra("url", url.getImage1());
+				context.startActivity(intent);
 				// Log.e("first", url.getImage1());
 				break;
 			case R.id.guide_home_content1_image2:
 				intent.putExtra("url", url.getImage2());
+				context.startActivity(intent);
 				break;
 			case R.id.guide_home_content2_image1:
 				intent.putExtra("url", url.getImage3());
+				context.startActivity(intent);
 				break;
 			case R.id.guide_home_content2_image2:
 				intent.putExtra("url", url.getImage4());
+				context.startActivity(intent);
 				break;
 			case R.id.guide_home_content2_image3:
 				intent.putExtra("url", url.getImage5());
+				context.startActivity(intent);
 				break;
 			case R.id.guide_home_content3_image1:
 				intent.putExtra("url", url.getImage6());
+				context.startActivity(intent);
 				break;
 			case R.id.guide_home_content3_image2:
 				intent.putExtra("url", url.getImage7());
+				context.startActivity(intent);
 				break;
 			case R.id.guide_home_content3_image3:
 				intent.putExtra("url", url.getImage8());
+				context.startActivity(intent);
 				break;
+			case R.id.world_Asia_image:
+				intent1.putExtra("adress", adress);
+				intent1.putExtra("url_path", url_path);
+				intent1.putExtra("url_param1", url_param1);
+				intent1.putExtra("url_param2", url_param2);
+				context.startActivity(intent1);
+				break;
+			case R.id.world_Europe_image:
+				intent1.putExtra("adress", adress);
+				intent1.putExtra("url_path", url_path);
+				intent1.putExtra("url_param1", url_param1);
+				intent1.putExtra("url_param2", url_param2);
+				context.startActivity(intent1);
+				break;
+			case R.id.world_Oceania_image:
+				intent1.putExtra("adress", adress);
+				intent1.putExtra("url_path", url_path);
+				intent1.putExtra("url_param1", url_param1);
+				intent1.putExtra("url_param2", url_param2);
+				context.startActivity(intent1);
+				break;
+			case R.id.world_Africa_image:
+				intent1.putExtra("adress", adress);
+				intent1.putExtra("url_path", url_path);
+				intent1.putExtra("url_param1", url_param1);
+				intent1.putExtra("url_param2", url_param2);
+				context.startActivity(intent1);
+				break;
+			case R.id.world_NorAmer_image:
+				intent1.putExtra("adress", adress);
+				intent1.putExtra("url_path", url_path);
+				intent1.putExtra("url_param1", url_param1);
+				intent1.putExtra("url_param2", url_param2);
+				context.startActivity(intent1);
+				break;
+			case R.id.world_EastAmer_image:
+				intent1.putExtra("adress", adress);
+				intent1.putExtra("url_path", url_path);
+				intent1.putExtra("url_param1", url_param1);
+				intent1.putExtra("url_param2", url_param2);
+				context.startActivity(intent1);
+				break;
+			case R.id.world_Antrac_image:
+
+				intent1.putExtra("adress", adress);
+
+				context.startActivity(intent1);
+				break;
+			case R.id.location_location_image:
+				intent1.putExtra("adress", adress);
+				context.startActivity(intent1);
+				break;
+			case R.id.location_airport_image:
+				intent1.putExtra("adress", adress);
+				context.startActivity(intent1);
+				break;
+			case R.id.location_hotel_image:
+				intent1.putExtra("adress", adress);
+				context.startActivity(intent1);
+				break;
+
 			}
-			context.startActivity(intent);
 
 		}
 

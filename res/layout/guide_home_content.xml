@@ -41,7 +41,8 @@
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="100dp"
-            android:layout_weight="1" >
+            android:layout_weight="1"
+            android:padding="3dp" >
 
             <ImageView
                 android:id="@+id/guide_home_content1_image1"
@@ -56,14 +57,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:background="@android:color/black"
                 android:gravity="center_horizontal"
-                android:text="nihao" />
+                android:singleLine="true"
+                android:text="nihao"
+                android:textColor="@android:color/white" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="100dp"
-            android:layout_weight="1" >
+            android:layout_weight="1"
+            android:padding="3dp" >
 
             <ImageView
                 android:id="@+id/guide_home_content1_image2"
@@ -78,8 +83,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:background="@android:color/black"
                 android:gravity="center_horizontal"
-                android:text="nihao" />
+                android:singleLine="true"
+                android:text="nihao"
+                android:textColor="@android:color/white" />
         </RelativeLayout>
     </LinearLayout>
 
@@ -93,7 +101,8 @@
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="100dp"
-            android:layout_weight="1" >
+            android:layout_weight="1"
+            android:padding="3dp" >
 
             <ImageView
                 android:id="@+id/guide_home_content2_image1"
@@ -108,14 +117,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:background="@android:color/black"
                 android:gravity="center_horizontal"
-                android:text="nihao" />
+                android:singleLine="true"
+                android:text="nihao"
+                android:textColor="@android:color/white" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="100dp"
-            android:layout_weight="1" >
+            android:layout_weight="1"
+            android:padding="3dp" >
 
             <ImageView
                 android:id="@+id/guide_home_content2_image2"
@@ -130,15 +143,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:background="@android:color/black"
                 android:gravity="center_horizontal"
-                android:text="nihao" />
+                android:singleLine="true"
+                android:text="nihao"
+                android:textColor="@android:color/white" />
         </RelativeLayout>
-
 
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="100dp"
-            android:layout_weight="1" >
+            android:layout_weight="1"
+            android:padding="3dp" >
 
             <ImageView
                 android:id="@+id/guide_home_content2_image3"
@@ -153,10 +169,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:background="@android:color/black"
                 android:gravity="center_horizontal"
-                android:text="nihao" />
+                android:singleLine="true"
+                android:text="nihao"
+                android:textColor="@android:color/white" />
         </RelativeLayout>
-
     </LinearLayout>
 
     <LinearLayout
@@ -169,7 +187,8 @@
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="100dp"
-            android:layout_weight="1" >
+            android:layout_weight="1"
+            android:padding="3dp" >
 
             <ImageView
                 android:id="@+id/guide_home_content3_image1"
@@ -184,14 +203,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:background="@android:color/black"
                 android:gravity="center_horizontal"
-                android:text="nihao" />
+                android:singleLine="true"
+                android:text="nihao"
+                android:textColor="@android:color/white" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="100dp"
-            android:layout_weight="1" >
+            android:layout_weight="1"
+            android:padding="3dp" >
 
             <ImageView
                 android:id="@+id/guide_home_content3_image2"
@@ -206,13 +229,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:background="@android:color/black"
                 android:gravity="center_horizontal"
-                android:text="nihao" />
+                android:singleLine="true"
+                android:text="nihao"
+                android:textColor="@android:color/white" />
         </RelativeLayout>
-<RelativeLayout
+
+        <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="100dp"
-            android:layout_weight="1" >
+            android:layout_weight="1"
+            android:padding="3dp" >
 
             <ImageView
                 android:id="@+id/guide_home_content3_image3"
@@ -227,11 +255,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:background="@android:color/black"
                 android:gravity="center_horizontal"
-                android:text="nihao" />
+                android:singleLine="true"
+                android:text="nihao"
+                android:textColor="@android:color/white" />
         </RelativeLayout>
-
-
     </LinearLayout>
 
 </LinearLayout>
