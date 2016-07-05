@@ -32,20 +32,29 @@ import com.ui.worldtrival.R;
 import com.worldtrival.adapter.HomeSearchFragmentAdapter;
 import com.worldtrival.bean.ContinentBean;
 import com.worldtrival.bean.SearchContinent;
+import com.worldtrival.init.LoadListView;
+import com.worldtrival.init.LoadListView.ILoadListener;
 
-public class FragmentContinent extends Fragment{
-	private ListView listview;
+public class FragmentContinent extends Fragment implements ILoadListener{
+	private LoadListView listview;
 	private View view;
 	private Activity activity;
 	public static final int FIRST = 0x2000;
 	private List<SearchContinent> listSearch;
 	private HomeSearchFragmentAdapter adapter ;
 	private MyHandler handler = new MyHandler();
+	String url_path;
+	String url_param1;
+	String url_param2;
+	int i = 2;
 	@Override
 	@Deprecated
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
 		this.activity = activity;
+		url_path = getArguments().getString("url_path");
+		url_param1 = getArguments().getString("url_param1");
+		url_param2 = getArguments().getString("url_param2");
 	}
 
 	@Override
@@ -54,28 +63,33 @@ public class FragmentContinent extends Fragment{
 		ViewGroup container,Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.fragment_contient_listview, container, false);
 		initView();
-		final String url_path = getArguments().getString("url_path");
-		final String url_param1 = getArguments().getString("url_param1");
-		final String url_param2 = getArguments().getString("url_param2");
+		/*url_path = getArguments().getString("url_path");
+		url_param1 = getArguments().getString("url_param1");
+		url_param2 = getArguments().getString("url_param2");*/
+		
+		getThread(url_path, url_param1, 1 ,url_param2);
+		
+		
+		return view;
+	}
+
+	private void getThread(final String url_path, final String url_param1,final int page,
+			final String url_param2) {
 		new Thread(new Runnable() {
 	 		
 			@Override
 			public void run() {
 				//在洲搜索中获得json字符串
-				String json = getJson(url_path,url_param1+1+url_param2);
-				Log.e("sssss", json);
+				String json = getJson(url_path,url_param1+page+url_param2);
+//				Log.e("sssss", json);
 				ContinentBean continentBean = getContinentBean(json);
-//				Log.e("fsf", continentBean.getList().get(1).getGoods_id());
-				Log.e("gsdg", continentBean.getList().get(2).getGoods_id());
+
 				Message msg = new Message();
 				msg.what = FIRST;
 				msg.obj = continentBean;
 				handler.sendMessage(msg);
 			}
 		}).start();
-		
-		
-		return view;
 	}
 
 	protected ContinentBean getContinentBean(String json) {
@@ -157,7 +171,7 @@ public class FragmentContinent extends Fragment{
 	} 
 
 	private void initView() {
-		listview =(ListView) view.findViewById(R.id.fragment_contient_listview); 
+		listview =(LoadListView) view.findViewById(R.id.fragment_contient_listview); 
 	}
 	class MyHandler extends Handler{
 		@Override
@@ -165,9 +179,9 @@ public class FragmentContinent extends Fragment{
 			super.handleMessage(msg);
 			switch (msg.what) {
 			case FIRST:
-				addFirstList((ContinentBean)msg.obj);
-				adapter = new HomeSearchFragmentAdapter(listSearch,activity);
-				listview.setAdapter(adapter);
+				ContinentBean bean = (ContinentBean) msg.obj;
+				showListview(bean);
+				
 				
 				
 				break;
@@ -180,4 +194,28 @@ public class FragmentContinent extends Fragment{
 	public void addFirstList(ContinentBean obj) {
 		listSearch = obj.getList();
 	}
+
+	public void showListview(ContinentBean bean) {
+		if(adapter == null){
+			addFirstList(bean);
+			listview.setInterface(this);
+			adapter = new HomeSearchFragmentAdapter(listSearch,activity);
+			listview.setAdapter(adapter);
+			Log.e("ddd", bean.getList().get(0).getName());
+		}else{
+			listSearch.addAll(bean.getList());
+//			addFirstList(bean);
+			Log.e("ddd", bean.getList().get(0).getName());
+			adapter.notifyDataSetChanged();
+			listview.loadComplete();
+		}
+	}
+
+	@Override
+	public void onLoad() {
+		getThread(url_path, url_param1, i ,url_param2);
+		i++;
+//		Log.e("load", url_param1+2+url_param2);
+	} 
+
 }
