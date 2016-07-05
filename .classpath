@@ -10,6 +10,7 @@
 	<classpathentry kind="lib" path="libs/AMap_Search_V3.2.1_20160308.jar"/>
 	<classpathentry kind="lib" path="libs/AMap_Location_v2.3.0_20160112.jar"/>
 	<classpathentry kind="lib" path="libs/AMap_2DMap_V2.9.0_20160525.jar"/>
+	<classpathentry kind="lib" path="libs/fastjson-1.2.5.jar"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

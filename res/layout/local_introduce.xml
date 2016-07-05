@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" 
+    android:id="@+id/linearLayout_local_introduce">
+
+    <ImageView
+        android:id="@+id/imageView_localCityIntroduce"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_margin="5dp"
+         />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_margin="5dp" >
+
+        <TextView
+            android:id="@+id/tv_localCityIntroduce2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="100"
+            android:textColor="@color/text_color_default"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_localCityIntroduce3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:text="110"
+            android:textColor="@color/text_color_default"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_localCityIntroduce1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tv_localCityIntroduce2"
+            android:ellipsize="end"
+            android:lines="2"
+            android:text="如果中国是一棵参天大树，北京会是树冠，而西安则是这棵树深扎地下的根系。西安，古称长安，历史悠久。在这里，中华民族几千年的沉淀与底蕴仍然静静地延续，文化、习俗、美德、传统、甚至糟"
+            android:textColor="@color/text_color_default" />
+
+    </RelativeLayout>
+
+</LinearLayout>

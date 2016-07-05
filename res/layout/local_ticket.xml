@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" 
+    android:id="@+id/linearLayout_local_ticket">
+
+    <ImageView
+        android:id="@+id/imageView_localGoodsTicket1"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_margin="5dp"
+        android:src="@drawable/app_icon" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_margin="5dp" >
+
+        <TextView
+            android:id="@+id/tv_localGoodsTicket1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="西安一日游西安一日游西安"
+            android:textColor="@color/text_color_default" />
+
+        <TextView
+            android:id="@+id/tv_localGoodsTicket3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:text="110"
+            android:textColor="@color/text_color_default"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tv_localGoodsTicket2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_localGoodsTicket3"
+            android:layout_alignParentLeft="true"
+            android:text="100"
+            android:textColor="@color/orange"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

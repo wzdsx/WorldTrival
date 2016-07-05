@@ -9,4 +9,6 @@
     <color name="green">#ff99cc00</color>
     <color name="green_complete">#ff34a350</color>
     <color name="action_bar">#ff00be3a</color>
+    <color name="orange">#e35000</color>
+    <color name="color_hr">#E5E5E5</color>
 </resources>
