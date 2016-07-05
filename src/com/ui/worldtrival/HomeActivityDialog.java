@@ -10,13 +10,11 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.text.Normalizer;
 import java.util.ArrayList;
-<<<<<<< HEAD
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-=======
-import java.util.List;
->>>>>>> 146dd94b84aaa2c834c3e5c0fdb3fcfd2c96197f
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,10 +30,9 @@ import com.worldtrival.bean.Recommend;
 import com.worldtrival.bean.Status;
 
 import android.app.Activity;
-<<<<<<< HEAD
+
 import android.content.Intent;
-=======
->>>>>>> 146dd94b84aaa2c834c3e5c0fdb3fcfd2c96197f
+
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
