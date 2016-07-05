@@ -4,6 +4,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -67,7 +68,8 @@ public class HomeSearchFragmentAdapter extends BaseAdapter {
 		holder.name.setText(searchContinent.getName());
 		holder.market_price.setText(searchContinent.getMarket_price());
 		holder.shop_price.setText(searchContinent.getShop_price());
-		holder.app_cut_price_desc.setText(searchContinent.getApp_cut_price_desc());
+		holder.app_cut_price_desc.setText("下单立减￥"+searchContinent.getApp_cut_price_desc());
+		holder.app_cut_price_desc.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
 		holder.item.setOnClickListener(new MyOnClickListener("http://www.7zhou.com/tour-"+searchContinent.getGoods_id()+".html"));
 		return v;
 	}
