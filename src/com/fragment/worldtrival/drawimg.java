@@ -13,7 +13,11 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-
+/**
+ * 发现页分享图片绘制
+ * @author Administrator
+ *
+ */
 public class drawimg extends ImageView{
 	
 	public drawimg(Context context, AttributeSet attrs, int defStyle) {
